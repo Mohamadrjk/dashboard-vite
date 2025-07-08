@@ -1,9 +1,8 @@
+import AppLoading from "@/components/Loadings/AppLoading/loading";
+import AnalysisCustomersInteractionChart from "@/components/pages-components/customesr-interaction-components/analysis-customers-interaction/analysis-customers-interaction";
+import InteractionsChart from "@/components/pages-components/customesr-interaction-components/customer-interaction/customer-interactions";
 import { Suspense } from "react";
-import AppLoading from "../loading";
-import CustomersClvChart from "@/components/customesr-interaction-components/customesr-clv/customers-clv";
-import InteractionsChart from "@/components/customesr-interaction-components/customer-interaction/customer-interactions";
-import CustomerSegmentsChart from "@/components/customesr-interaction-components/customer-segments/customer-segments";
-import AnalysisCustomersInteractionChart from "@/components/customesr-interaction-components/analysis-customers-interaction/analysis-customers-interaction";
+
 
 const CustomersInteractionPAge = () => {
   return (

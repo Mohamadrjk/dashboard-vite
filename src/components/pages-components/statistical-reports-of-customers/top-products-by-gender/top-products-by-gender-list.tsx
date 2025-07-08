@@ -2,10 +2,6 @@ import { ITopProductsByGender } from "@/types/customers-model";
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-
-import "swiper/css/autoplay";
 
 interface TopProductsByGenderListProps {
   items: ITopProductsByGender[];

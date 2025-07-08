@@ -6,17 +6,11 @@ import { Button, Divider } from "antd";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { PlusOutlined } from "@ant-design/icons";
 import { lazy } from "react";
-export const MenuDetailModal = dynamic(
-  () => import("../menu-detail/menu-detail-modal"),
-  {
-    ssr: false,
-  }
+export const MenuDetailModal = lazy(
+  () => import("../menu-detail/menu-detail-modal")
 );
-export const MenuEditModal = dynamic(
-  () => import("../edit-menu/edit-menu-modal"),
-  {
-    ssr: false,
-  }
+export const MenuEditModal = lazy(
+  () => import("../edit-menu/edit-menu-modal")
 );
 
 interface MenuGridCardItemProps {

@@ -1,12 +1,13 @@
 "use client";
-import SalesByGenderAndCityReportConfigs from "@/components/gender-components/new-cityGenders-report/city-and-gender-dateFilter";
-import CartCardContainer from "@/components/shared/chart-card/chart-card-containetr";
+
 import { useCategoriesSale } from "@/hooks/product-analysis-hooks/useGetCategoriesSale";
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
 import { RedoOutlined } from "@ant-design/icons";
 import { Alert, Select, Skeleton } from "antd";
 import { ApexOptions } from "apexcharts";
 import { useMemo } from "react";
+import SalesByGenderAndCityReportConfigs from "../../gender-components/new-cityGenders-report/city-and-gender-dateFilter";
+import CartCardContainer from "@/components/shared-components/chart-card/chart-card-containetr";
 
 const CategoriesSaleInPeriodOfTime = () => {
   const {

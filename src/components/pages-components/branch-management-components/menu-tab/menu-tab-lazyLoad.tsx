@@ -1,28 +1,13 @@
 "use client";
 import { lazy } from "react";
-import ButtonLoading from "../tabs-component/Loadings/buttonLoading";
-import GridLoading from "../tabs-component/Loadings/GridLoading";
-import TabelLoading from "../tabs-component/Loadings/TabelLoading";
 
-export const MenuGridContainerLazy = dynamic(
-  () => import("./menu-grid-cards/menu-grid-container"),
-  {
-    ssr: false,
-    loading: GridLoading,
-  }
+export const MenuGridContainerLazy = lazy(
+  () => import("./menu-grid-cards/menu-grid-container")
 );
-export const MenuAddModalLazy = dynamic(
-  () => import("./add-menu/add-menu-modal"),
-  {
-    ssr: false,
-    loading: ButtonLoading,
-  }
+export const MenuAddModalLazy = lazy(
+  () => import("./add-menu/add-menu-modal")
 );
 
-export const MenuTabTableLazy = dynamic(
-  () => import("./menu-tab-table/menu-tab-table-container"),
-  {
-    ssr: false,
-    loading: TabelLoading,
-  }
+export const MenuTabTableLazy = lazy(
+  () => import("./menu-tab-table/menu-tab-table-container")
 );

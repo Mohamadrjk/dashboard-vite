@@ -9,7 +9,7 @@ import { getTopCustomers } from "@/utils/customerService";
 import { ITopCustomers } from "@/types/customers-model";
 import TopCustomerCardItem from "./top-customer-card";
 import { Icon } from "@iconify/react";
-import SalesByGenderAndCityReportConfigs from "@/components/gender-components/new-cityGenders-report/city-and-gender-dateFilter";
+import SalesByGenderAndCityReportConfigs from "../../gender-components/new-cityGenders-report/city-and-gender-dateFilter";
 
 const GENDER_ICONS = {
   آقا: { icon: "fontisto:male", color: "#2CA4D2" },

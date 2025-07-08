@@ -1,11 +1,9 @@
+import AppLoading from "@/components/Loadings/AppLoading/loading";
+import NumberOfCustomerPurchases from "@/components/pages-components/statistical-reports-of-customers/Number-of-customer-purchases/Number-of-customer-purchases";
+import PurchaseDistribution from "@/components/pages-components/statistical-reports-of-customers/purchase-distribution/purchase-distribution";
+import { TopCustomers, TopProductsByGenderContainer } from "@/components/pages-components/statistical-reports-of-customers/statical-report-lazy/statical-report-lazy";
 import { Suspense } from "react";
-import AppLoading from "../loading";
-import {
-  PurchaseDistribution,
-  NumberOfCustomerPurchases,
-  TopCustomers,
-  TopProductsByGenderContainer,
-} from "@/components/statistical-reports-of-customers/statical-report-lazy/statical-report-lazy";
+
 
 const StatisticalReportsPage = () => {
   return (

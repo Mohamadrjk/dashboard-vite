@@ -1,5 +1,5 @@
 "use client";
-import CartCardContainer from "@/components/shared/chart-card/chart-card-containetr";
+import CartCardContainer from "@/components/shared-components/chart-card/chart-card-containetr";
 import { useSalesTrendAnalysis } from "@/hooks/product-analysis-hooks/useSalesTrendAnalysis";
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
 import { RedoOutlined } from "@ant-design/icons";
@@ -106,7 +106,7 @@ const SalesTrendAnalysis = () => {
       },
     ],
     tooltip: {
-      custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+      custom: function ({ series, dataPointIndex }) {
         const sales = series[0][dataPointIndex];
 
         return `

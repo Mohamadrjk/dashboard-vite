@@ -1,5 +1,5 @@
 "use client";
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, lazy, SetStateAction, useState } from "react";
 import { Alert, Button, Skeleton, Table, TableColumnsType } from "antd";
 import { RedoOutlined } from "@ant-design/icons";
 import clsx from "clsx";
@@ -10,13 +10,9 @@ import moment from "jalali-moment";
 import useEditCategory from "../category-edit-action/useEditCategory";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import useDeleteCategoryItem from "../category-delete-action/useDeleteCategory";
-import CustomPagination from "@/components/shared/custom-pagination/custom-pagination";
-import { lazy } from "react";
-const CategoryTabEditAction = dynamic(
-  () => import("../category-edit-action/category-tab-edit-action"),
-  {
-    ssr: false,
-  }
+import CustomPagination from "@/components/shared-components/custom-pagination/custom-pagination";
+const CategoryTabEditAction = lazy(
+  () => import("../category-edit-action/category-tab-edit-action")
 );
 interface CategoryTabTableProps {
   isLoading: boolean;

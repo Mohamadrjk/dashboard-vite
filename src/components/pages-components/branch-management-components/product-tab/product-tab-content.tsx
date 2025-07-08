@@ -1,22 +1,11 @@
-import React from "react";
 import useProductList from "@/hooks/branch-management-hooks/useProductList";
 import { lazy } from "react";
-import TabelLoading from "../tabs-component/Loadings/TabelLoading";
-import ButtonLoading from "../tabs-component/Loadings/buttonLoading";
 
-const ProductTabTable = dynamic(
-  () => import("./product-tab-table/product-tab-table-container"),
-  {
-    ssr: false,
-    loading: TabelLoading,
-  }
+const ProductTabTable = lazy(
+  () => import("./product-tab-table/product-tab-table-container")
 );
-const ProductAddModal = dynamic(
-  () => import("./add-product/add-product-modal"),
-  {
-    ssr: false,
-    loading: ButtonLoading,
-  }
+const ProductAddModal = lazy(
+  () => import("./add-product/add-product-modal")
 );
 function ProductTabContent() {
   const ProductListProps = useProductList(false);

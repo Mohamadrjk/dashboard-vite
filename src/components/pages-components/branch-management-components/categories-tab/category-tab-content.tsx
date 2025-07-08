@@ -1,20 +1,9 @@
-import React from "react";
 import useCategoryList from "@/hooks/branch-management-hooks/useCategoryList";
 import { lazy } from "react";
-import TabelLoading from "../tabs-component/Loadings/TabelLoading";
 // import CategoryTabAddAction from "";
-const CategoryTabTable = dynamic(
-  () => import("./category-tab-table/category-tab-table-container"),
-  {
-    ssr: false,
-    loading: TabelLoading,
-  }
-);
-const CategoryTabAddAction = dynamic(
-  () => import("./category-add-action/category-tab-add-action"),
-  {
-    ssr: false,
-  }
+const CategoryTabTable = lazy(() => import("./category-tab-table/category-tab-table-container"));
+const CategoryTabAddAction = lazy(
+  () => import("./category-add-action/category-tab-add-action")
 );
 function CategoryTabContent() {
   const CategoryTableProps = useCategoryList(false);

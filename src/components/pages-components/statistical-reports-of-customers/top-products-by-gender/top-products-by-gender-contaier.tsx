@@ -5,7 +5,7 @@ import TopProductsByGenderList from "./top-products-by-gender-list";
 import { getTopProductsByGender } from "@/utils/customerService";
 import { Alert, Skeleton } from "antd";
 import { RedoOutlined } from "@ant-design/icons";
-import SalesByGenderAndCityReportConfigs from "@/components/gender-components/new-cityGenders-report/city-and-gender-dateFilter";
+import SalesByGenderAndCityReportConfigs from "../../gender-components/new-cityGenders-report/city-and-gender-dateFilter";
 
 const TopProductsByGenderContainer = () => {
   const [loading, setLoading] = useState(false);

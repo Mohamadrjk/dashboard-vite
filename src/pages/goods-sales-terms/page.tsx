@@ -1,11 +1,9 @@
+import AppLoading from "@/components/Loadings/AppLoading/loading";
+import CategoriesSaleInPeriodOfTime from "@/components/pages-components/Product-analysis-components/sales-terms-components/categories-sale";
+import CategoriesSoldInPeriodOfTime from "@/components/pages-components/Product-analysis-components/sales-terms-components/categories-sold";
+import { SalesPercentagesPieChartLAzy, SalesTrendAnalysisLAzy } from "@/components/pages-components/Product-analysis-components/sales-terms-components/sale-terms-lazy-components";
 import { Suspense } from "react";
-import AppLoading from "../loading";
-import {
-  SalesPercentagesPieChartLAzy,
-  SalesTrendAnalysisLAzy,
-} from "@/components/Product-analysis-components/sales-terms-components/sale-terms-lazy-components";
-import CategoriesSaleInPeriodOfTime from "@/components/Product-analysis-components/sales-terms-components/categories-sale";
-import CategoriesSoldInPeriodOfTime from "@/components/Product-analysis-components/sales-terms-components/categories-sold";
+
 
 const GeneralGoodsSalesTermsPage = () => {
   return (

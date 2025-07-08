@@ -1,9 +1,8 @@
 import { CloseCircleOutlined } from "@ant-design/icons";
 import { Modal, Skeleton } from "antd";
-import React, { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, lazy } from "react";
 import useAssignProductToMenu from "./useAssignProductToMenu";
 import { IMenuItem } from "@/types/ditgitalmenu-types/menu";
-import { lazy } from "react";
 import useCategoryList from "@/hooks/branch-management-hooks/useCategoryList";
 import SelectionSkeleton from "./SelectionSkeleton";
 const ContentLoading = () => (
@@ -17,10 +16,7 @@ const ContentLoading = () => (
     </div>
   </div>
 );
-const AssignProductToMenu = dynamic(() => import("./assign-product-to-menu"), {
-  ssr: false,
-  loading: () => <ContentLoading />,
-});
+const AssignProductToMenu = lazy(() => import("./assign-product-to-menu"));
 
 interface MenuDetailModalProps {
   realodMethod?: () => void;
