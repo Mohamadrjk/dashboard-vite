@@ -1,0 +1,3 @@
+.ToggleSwitch[class~="ant-switch-checked"] {
+  background-color: var(--Tritary) !important;
+}

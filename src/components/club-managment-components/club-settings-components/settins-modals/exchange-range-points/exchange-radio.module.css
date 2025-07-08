@@ -1,0 +1,14 @@
+.custom-rado
+  [class~="ant-radio-button-wrapper-checked"]:not(
+    .ant-radio-button-wrapper-disabled
+  ) {
+  color: #fff;
+  background: var(--Secondary) !important;
+  border-color: var(--Secondary) !important;
+}
+
+.custom-rado [class~="ant-radio-button-wrapper"]:hover {
+  background-color: var(--disable);
+  border-color: var(--Secondary) !important;
+  color: #fff;
+}

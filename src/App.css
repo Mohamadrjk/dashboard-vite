@@ -1,0 +1,254 @@
+@import "tailwindcss";
+@import "./tailwind.css";
+@font-face {
+  font-family: Regular;
+  src: url("./fonts/IRANYekanXFaNum-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: Light;
+  src: url("./fonts/IRANYekanXFaNum-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: Medium;
+  src: url("./fonts/IRANYekanXFaNum-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: Bold;
+  src: url("./fonts/IRANYekanXFaNum-Bold.woff") format("woff");
+}
+/* For WebKit browsers (Chrome, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary1: #1d313b;
+  --primary2: #416e86;
+  --secondary: #50675e;
+  --secondary-50: #f8fafb;
+  --call-to-action: #ff844b;
+  --call-to-action-50: #ff844b80;
+  --call-to-action-disable: #ffe0d2;
+  --backGround: #fbfeff;
+  --highliter: #ffffff;
+  --Alert: #ff0000;
+  --gold: #edf10c;
+  --social-telegram: #27a7e7;
+  --social-whatsapp: #4ecb5c;
+  --skeleton-background: #e5e7eb;
+  --main-light-silver: #e7e8e9;
+  --secondary2: #e4e7f4;
+  --primary: #202224;
+  --secondary1: #37a7bb;
+  --sec1-hover: #9bd3dd;
+  --Secondary2: #1e9c51;
+  --Secondary: #50675e;
+
+  --sec2-hover: #cdd0dc;
+  --CTA-Focus: #0e843e;
+  --cta-hover: #173461;
+  --focus: #48bb78;
+  --disable: #d3dbe8;
+  --highlighter: #ffffff;
+  --highlighter-hover: #edf0f8;
+  --BG: #f2f6fc;
+  --cta: #60a5fa;
+  --alert: #c03030;
+  --alert-hover: #f6e2e2;
+  --success: #60c213;
+  --success-hover: #e6f1e3;
+  --row1: #ffffff;
+  --row2: #edeff7;
+  --row-seen: #f5f6fa;
+  --chart1: #84d2f6;
+  --chart2: #ff5a5a;
+  --chart3: #15557c;
+  --Tritary: #001529;
+  --Focus: "#409FA6";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+.animate-flicker {
+  animation: fadeIn 0.8s infinite alternate;
+}
+
+#your-element-selector canvas {
+  will-change: transform, opacity;
+}
+
+canvas {
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+  user-select: none;
+  animation: 1s ease 0s 1 normal none running fadein;
+}
+
+.rtl-custom {
+  direction: rtl;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #1e9c51 94%, #0000) top/8px 8px
+      no-repeat,
+    conic-gradient(#0000 30%, #1e9c51);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: l13 1s infinite linear;
+}
+@keyframes l13 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+button:active {
+  transform: scale(0.95) !important;
+}
+
+.border-gradient-secondary {
+  background: linear-gradient(#f2f6fc, #f2f6fc) padding-box,
+    linear-gradient(
+        90deg,
+        transparent 5%,
+        rgba(10, 156, 81, 1) 50%,
+        transparent 95%
+      )
+      border-box;
+
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(
+      90deg,
+      transparent 5%,
+      rgba(30, 156, 81, 1) 50%,
+      transparent 95%
+    )
+    1;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.custome-scrool-bar::-webkit-scrollbar {
+  background-color: var(--BG);
+  width: 8px;
+  opacity: 0;
+}
+.ant-tooltip-inner {
+  font-family: "Regular" !important;
+}
+.custome-scrool-bar::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: var(--cta-hover);
+}
+
+.custome-scrool-bar-small::-webkit-scrollbar {
+  background-color: var(--BG);
+  width: 4px;
+  opacity: 0;
+}
+
+.custome-scrool-bar-small::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: var(--cta-hover);
+}
+.ant-modal-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ant-modal-wrap .ant-modal {
+  height: max-content !important;
+  max-height: 95dvh !important;
+  width: 90vw !important;
+  margin: auto !important;
+  top: auto !important;
+}
+
+.ant-modal-wrap .ant-modal:firstchild {
+  height: 100%;
+}
+
+.login-background {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+.ant-input-number .ant-input-number-handler-wrap {
+  display: none !important;
+}
+
+.ant-input-number .ant-input-number-input-wrap .ant-input-number-input {
+  font-family: "Regular" !important;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.ant-menu .ant-menu-item,
+.ant-menu .ant-menu-sub .ant-menu-inline .ant-menu-item {
+  padding-left: 28px !important;
+}
+
+.ant-message-notice-content {
+  font-family: "Regular";
+  direction: rtl;
+}
+
+.ant-menu-submenu-popup .ant-menu-item {
+  font-family: "Medium";
+  display: flex !important;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 4px;
+}
+.ant-alert-content {
+  font-family: "Medium" !important;
+}

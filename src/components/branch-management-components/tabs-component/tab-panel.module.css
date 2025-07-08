@@ -1,0 +1,11 @@
+.tab-panel {
+  width: 100% !important;
+}
+
+.tab-panel,
+.tab-panel [class~="ant-tabs-tab"],
+.tab-panel [class~="ant-tabs-nav-list"] {
+  width: 100% !important;
+  flex-grow: 1;
+  justify-content: center;
+}

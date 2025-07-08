@@ -1,0 +1,58 @@
+.club-custom-table {
+  width: 100%;
+  font-family: "Regular";
+}
+
+.club-custom-table [class~="ant-table-pagination"] {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  row-gap: 8px;
+}
+
+.club-custom-table [class~="ant-table-container"]:after {
+  display: none !important;
+}
+
+.club-custom-table [class~="ant-table-container"] [class~="ant-table-body"] {
+  font-family: "Regular" !important;
+  text-align: center;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+.club-custom-table
+  [class~="ant-table-container"]
+  [class~="ant-table-body"]
+  [class~="ant-table-content"] {
+  scrollbar-width: thin;
+  scrollbar-color: #eaeaea transparent;
+  scrollbar-gutter: stable;
+}
+
+.club-custom-table [class~="ant-table-thead"] [class~="ant-table-cell"] {
+  position: relative;
+  color: var(--highliter);
+  text-align: center;
+  font-family: "Regular" !important;
+  background: #7998c4;
+  font-size: 12px;
+  padding: 10px !important;
+  border-bottom: none !important;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+.club-custom-table [class~="ant-table-tbody"] [class~="ant-table-cell"] {
+  padding: 0px !important;
+  text-align: center;
+  font-family: "Regular" !important;
+  font-size: 14px;
+}
+
+.club-custom-table [class~="ant-table-thead"] [class~="ant-table-cell"]:hover {
+  background: #002140;
+}
+
+.club-custom-table [class~="ant-table-thead"] [class~="ant-table-cell"]:before {
+  display: none !important;
+}

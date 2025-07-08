@@ -1,0 +1,9 @@
+.Cart_container:hover {
+  background-color: var(--main-light-silver);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transform: translateY(-4px);
+}
+
+.Cart_container:hover span {
+  opacity: 1 !important;
+}
