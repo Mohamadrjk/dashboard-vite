@@ -1,6 +1,6 @@
-import LoyaltyChangesComponent from "@/components/customer-loyalty-level-components/loyalty-changes/loyalty-changes";
-import CustomerSegmentsChart from "@/components/customesr-interaction-components/customer-segments/customer-segments";
-import NumberOfCustomerPurchases from "@/components/statistical-reports-of-customers/Number-of-customer-purchases/Number-of-customer-purchases";
+import LoyaltyChangesComponent from "@/components/pages-components/customer-loyalty-level-components/loyalty-changes/loyalty-changes";
+import CustomerSegmentsChart from "@/components/pages-components/customesr-interaction-components/customer-segments/customer-segments";
+import NumberOfCustomerPurchases from "@/components/pages-components/statistical-reports-of-customers/Number-of-customer-purchases/Number-of-customer-purchases";
 
 const CustomerLoyaltyLevelPage = () => {
   return (

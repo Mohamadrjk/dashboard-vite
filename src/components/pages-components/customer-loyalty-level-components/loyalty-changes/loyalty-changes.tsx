@@ -3,11 +3,11 @@ import { ILoyaltyChanges } from "@/types/customers-model";
 import { getAnalysisLoyaltyChanges } from "@/utils/customerService";
 import { RedoOutlined } from "@ant-design/icons";
 import { Alert, Skeleton } from "antd";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ApexOptions } from "apexcharts";
 import moment from "jalali-moment";
 import Chart from "react-apexcharts";
-import SalesByGenderAndCityReportConfigs from "@/components/gender-components/new-cityGenders-report/city-and-gender-dateFilter";
+import SalesByGenderAndCityReportConfigs from "../../gender-components/new-cityGenders-report/city-and-gender-dateFilter";
 const data = [
   {
     month: "2024-10",
