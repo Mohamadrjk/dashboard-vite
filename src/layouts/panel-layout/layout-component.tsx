@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
 import { Button, Layout } from "antd";
-
 import LogOut from "./header-logout";
 import { items, routes } from "./sidebar-menu-data";
 import SideBar from "./drawer-sider";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import ErrorBoundaryWrapper from "@/components/error-component/ErrorBoundary";
-import NotFoundComponent from "@/components/notFound-components/not-found-component";
 import { useLocation } from "react-router";
+import ErrorBoundaryWrapper from "@/components/shared-components/error-component/ErrorBoundary";
+import NotFoundComponent from "@/components/shared-components/notFound-components/not-found-component";
 const { Header, Content } = Layout;
 const logoUrl = "./dashboard-logo.webp";
 const LayoutWarper: React.FC<{

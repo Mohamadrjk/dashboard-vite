@@ -1,5 +1,6 @@
-import CityGendersMApReportContainer from "@/components/gender-components/new-cityGenders-report/cityGenders-report-container";
-import GenderTopbarContainer from "@/components/gender-components/topbar-carts/topbar-carts-container";
+import CityGendersMApReportContainer from "@/components/pages-components/gender-components/new-cityGenders-report/cityGenders-report-container";
+import GenderTopbarContainer from "@/components/pages-components/gender-components/topbar-carts/topbar-carts-container";
+
 
 const GenderSalesPage = () => {
   return (

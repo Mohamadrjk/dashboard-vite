@@ -4,6 +4,7 @@ import StatisticalReports from "../pages/statistical-reports";
 import Dashboard from "@/pages/dashbaord";
 import MainLayout from "@/layouts/MainLayout";
 import BranchManagement from "@/pages/branch-management/page";
+import GenderSalesPage from "@/pages/Gender-sales/page";
 
 export const router = createBrowserRouter(
     [
@@ -28,6 +29,10 @@ export const router = createBrowserRouter(
                 {
                     path: "statistical-reports",
                     element: <StatisticalReports />
+                },
+                {
+                    path: 'Gender-sales',
+                    element: <GenderSalesPage />
                 },
                 {
                     path: "branch-management",

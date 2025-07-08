@@ -1,0 +1,89 @@
+.svg-wrapper {
+  display: block !important;
+  height: 100%;
+}
+.svg-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.svg-wrapper svg > a path,
+.svg-wrapper svg g > a path {
+  transition: all ease-in-out 300ms;
+  -webkit-transition: all ease-in-out 300ms;
+  -moz-transition: all ease-in-out 300ms;
+  -ms-transition: all ease-in-out 300ms;
+  -o-transition: all ease-in-out 300ms;
+}
+
+.svg-wrapper svg > a:hover path,
+.svg-wrapper svg g > a:hover path {
+  fill: #cbcddd;
+  /* Match stroke to fill for bold effect */
+  stroke-width: 3px; /* Increase width to make it bolder */
+  filter: drop-shadow(0rem 0.6rem 1rem rgb(39, 39, 51));
+  transform: translateY(-5px);
+  transition: stroke-width 0.2s ease; /* Smooth transition */
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+}
+
+.withData path:nth-child(1) {
+  stroke: green;
+}
+
+.noData path:nth-child(1) {
+  stroke: rgba(203, 0, 0, 0.818);
+}
+
+.svg-wrapper svg > a:hover path:nth-child(2),
+.svg-wrapper svg g > a:hover path:nth-child(2) {
+  fill: rgb(74, 74, 74) !important;
+  stroke: black !important;
+  stroke-width: 1px;
+  filter: none !important;
+}
+
+.active-province path {
+  fill: #0089ac;
+
+  stroke-width: 5px; /* Increase width to make it bolder */
+  filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.19))
+    drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.23));
+  transition: stroke-width 0.2s ease; /* Smooth transition */
+}
+
+.visible {
+  opacity: 1 !important;
+  pointer-events: auto; /* Allow interaction when visible */
+  transform: translate(-60%, -130%);
+  width: 270px;
+  aspect-ratio: 16/5;
+  height: auto !important;
+}
+
+.city-tooltip-bottom::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Adjust to move the triangle down */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent; /* Pointing down */
+}
+.city-tooltip-left::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* Move it outside the tooltip */
+  transform: translateY(-50%); /* Center it vertically */
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent rgba(0, 0, 0, 0.8) transparent transparent; /* Left arrow */
+}

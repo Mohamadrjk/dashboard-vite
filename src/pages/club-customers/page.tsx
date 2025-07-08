@@ -1,4 +1,4 @@
-import { CustomersTableContainerLazy } from "@/components/club-managment-components/club-costomers-components/club-customers-lazy-components";
+import { CustomersTableContainerLazy } from "@/components/pages-components/club-managment-components/club-costomers-components/club-customers-lazy-components";
 import { Spin } from "antd";
 
 import { Suspense } from "react";

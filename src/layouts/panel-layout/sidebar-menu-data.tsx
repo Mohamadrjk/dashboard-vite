@@ -26,7 +26,7 @@ export const items: MenuItem[] = [
   getItem(
     "داشبورد",
     "/",
-    <Link to={"/"}>
+    <Link to={"/dashboard"}>
       <PieChartOutlined width={"2rem"} />
     </Link>
   ),

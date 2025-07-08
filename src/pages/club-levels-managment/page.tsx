@@ -1,11 +1,7 @@
+import AppLoading from "@/components/Loadings/AppLoading/loading";
+import { ClmTopbarCardComponentLazy, ClubManagementTableComponentLazy, LevelDataAbundanceLazy, UsersLevelsDataLazy } from "@/components/pages-components/club-managment-components/club-levels-components/club-levels-managment-componets/club-levels-lazy";
 import { Suspense } from "react";
-import AppLoading from "../loading";
-import {
-  UsersLevelsDataLazy,
-  ClmTopbarCardComponentLazy,
-  LevelDataAbundanceLazy,
-  ClubManagementTableComponentLazy,
-} from "@/components/club-managment-components/club-levels-components/club-levels-managment-componets/club-levels-lazy";
+
 
 const ClubLevelsManagementPage = () => {
   return (

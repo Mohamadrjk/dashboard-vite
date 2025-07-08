@@ -1,5 +1,5 @@
 import { ISalesByGenderAndCityReport } from "@/types/genderTypes";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export function useCursorTooltip() {
   const [tooltip, setTooltip] = useState<{

@@ -1,5 +1,6 @@
-import { CityStatesChartComponentLAzy, DashboardTopCellingProductsLAzy, SalePerMonthChartsContainerLAzy, WeeklyIncomeChartComponentLAzy } from "@/components/dashboard-components/dashboar-dynamic-components/dashboard-dynamic-components";
-import DashboardTopBArCardsContainer from "@/components/dashboard-components/dashboars-topbar-carts/dashboard-topbar-lazy-cards";
+import { CityStatesChartComponentLAzy, DashboardTopCellingProductsLAzy, SalePerMonthChartsContainerLAzy, WeeklyIncomeChartComponentLAzy } from "@/components/pages-components/dashboard-components/dashboar-dynamic-components/dashboard-dynamic-components";
+import DashboardTopBArCardsContainer from "@/components/pages-components/dashboard-components/dashboars-topbar-carts/dashboard-topbar-lazy-cards";
+
 
 
 const Dashboard = () => {

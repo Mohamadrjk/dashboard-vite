@@ -1,0 +1,103 @@
+.next-progresBar [class~="ant-progress-outer"] {
+  width: calc(100% - 24px) !important;
+  border: 2px solid var(--BG);
+  border-radius: 10px;
+  position: absolute !important;
+}
+
+/* Base styles */
+.custom-sider {
+  position: fixed; /* Fixed position to slide in/out */
+  top: 0;
+  right: 0; /* Place the sider on the right */
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  transition: transform 0.3s ease; /* Smooth sliding transition */
+}
+
+.survey-modal-wrapper {
+  width: 100%;
+}
+
+.survey-modal-wrapper [class~="ant-modal"] {
+  width: 95vw !important;
+}
+
+.modal-close-button [class~="ant-modal-close"] {
+  color: var(--Alert) !important;
+  font-size: 16px;
+}
+
+.modal-close-button button [class~="ant-modal-close-x"] {
+  display: flex;
+  font-size: 20px !important;
+  font-style: normal;
+  line-height: 32px;
+  justify-content: center;
+  text-transform: none;
+  text-rendering: auto;
+}
+.coupons-tabs_container {
+  width: 100%;
+}
+
+.coupons-tabs_container [class~="ant-tabs-nav"] [class~="ant-tabs-nav-wrap"] {
+  width: 100%;
+}
+
+.coupons-tabs_container [class~="ant-tabs-nav"]:before {
+  position: absolute;
+  right: 0;
+  left: 0;
+  border-bottom: 2px solid #dddddd !important;
+  content: "";
+}
+
+.coupons-tabs_container [class~="ant-tabs-content-holder"] {
+  padding: 0 16px 100px 16px;
+}
+
+.coupons-tabs_container
+  [class~="ant-tabs-nav"]
+  [class~="ant-tabs-nav-wrap"]
+  [class~="ant-tabs-nav-list"] {
+  width: 100%;
+}
+
+.coupons-tabs_container
+  [class~="ant-tabs-nav"]
+  [class~="ant-tabs-nav-wrap"]
+  [class~="ant-tabs-nav-list"]
+  [class~="ant-tabs-tab"] {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-family: "Medium";
+}
+
+.coupons-tabs_container
+  [class~="ant-tabs-nav"]
+  [class~="ant-tabs-nav-wrap"]
+  [class~="ant-tabs-nav-list"]
+  [class~="ant-tabs-ink-bar"] {
+  width: 50% !important;
+}
+.coupons-tabs_container
+  [class~="ant-tabs-nav"]
+  [class~="ant-tabs-nav-wrap"]
+  [class~="ant-tabs-nav-list"]
+  [class~="ant-tabs-tab-active"]
+  [class~="ant-tabs-tab-btn"] {
+  color: var(--Secondary2);
+}
+
+.coupons-tabs_container
+  [class~="ant-tabs-nav"]
+  [class~="ant-tabs-nav-wrap"]
+  [class~="ant-tabs-nav-list"]
+  [class~="ant-tabs-ink-bar"] {
+  background: var(--Secondary2);
+}
