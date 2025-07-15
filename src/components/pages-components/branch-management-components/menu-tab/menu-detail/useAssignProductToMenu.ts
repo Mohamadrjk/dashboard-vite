@@ -7,7 +7,7 @@ import {
   createMenuDetail,
   getMenuDetail,
   updateMenuDetail,
-} from "@/utils/digitalmenu-api/menuService";
+} from "@/api/digitalmenu-api/menuService";
 import { useQuery } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
 import { useState } from "react";

@@ -4,7 +4,7 @@ import { ApexOptions } from "apexcharts";
 import { useCallback, useEffect, useState } from "react";
 import { Alert, Skeleton } from "antd";
 import { RedoOutlined } from "@ant-design/icons";
-import { getRankingPageLabels } from "@/utils/club-api/club-report-service";
+import { getRankingPageLabels } from "@/api/club-api/club-report-service";
 import { IRankingLevelReport } from "@/types/club-types/club-reports-type";
 
 const UsersLevelsData = () => {

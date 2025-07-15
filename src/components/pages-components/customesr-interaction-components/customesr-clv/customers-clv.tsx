@@ -1,8 +1,8 @@
 "use client";
 
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
-import { getCustomersClvReport } from "@/utils/customerService";
-import { getSalesPerMonth } from "@/utils/dashboardServices";
+import { getCustomersClvReport } from "@/api/customerService";
+import { getSalesPerMonth } from "@/api/dashboardServices";
 import { Skeleton } from "antd";
 import { ApexOptions } from "apexcharts";
 import { lazy } from "react";

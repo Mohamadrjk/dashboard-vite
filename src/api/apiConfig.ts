@@ -5,7 +5,7 @@ import {
   deleteCookie,
   getCookie,
   setCookie,
-} from "./common-methods/coockieMethods";
+} from "../utils/common-methods/coockieMethods";
 import { triggerVisibility } from "@/redux/commonSlice/commonSlice";
 
 // Create the Axios instance

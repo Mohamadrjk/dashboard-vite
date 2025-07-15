@@ -1,10 +1,7 @@
+import { LazyCustomerPurchasingTrendsData, LazyKeyCustomersShareSales, LazyTopCustomersByers } from "@/components/pages-components/overall-sales-performance-components/key-customets-components/key-customers-lazy-components";
+import AppLoading from "@/components/shared-components/loadings-components/app-loading/loading";
 import { Suspense } from "react";
-import AppLoading from "../loading";
-import {
-  LazyCustomerPurchasingTrendsData,
-  LazyKeyCustomersShareSales,
-  LazyTopCustomersByers,
-} from "@/components/overall-sales-performance-components/key-customets-components/key-customers-lazy-components";
+
 
 const KeyAccounts = () => {
   return (

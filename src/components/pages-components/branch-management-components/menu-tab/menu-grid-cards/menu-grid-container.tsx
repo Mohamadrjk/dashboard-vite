@@ -1,9 +1,10 @@
-import React from "react";
+
 import MenuGridCardItem from "./menu-grid-card-item";
 import { MenuDataProps } from "../menu-tab-table/menu-tab-table-container";
-import { MenuGridHeroIcon } from "@/components/shared/custom-icons";
-import CustomPagination from "@/components/shared/custom-pagination/custom-pagination";
+
 import { Empty, Skeleton } from "antd";
+import { MenuGridHeroIcon } from "@/components/shared-components/custom-icons";
+import CustomPagination from "@/components/shared-components/custom-pagination/custom-pagination";
 
 
 

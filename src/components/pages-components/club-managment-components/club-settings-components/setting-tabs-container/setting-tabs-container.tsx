@@ -1,5 +1,4 @@
 "use client";
-import { lazy } from "react";
 import SettingCartComponent from "../setting-tabs-cart/setting-cart-component";
 import style from "../club-settings-styles.module.css";
 import { tabsList } from "../club-tabs-data";
@@ -13,10 +12,10 @@ import ProgramSettingsContainer from "../settins-modals/program-settings-modal-c
 import ExchangeRangePointsContainer from "../settins-modals/exchange-range-points/exchange-range-points-container";
 import clsx from "clsx";
 import RulesSetting from "../settins-modals/rules-setting/rules-setting";
+import { dynamic } from "@/components/shared-components/dynamicImport/dynamicImport";
 const ClubThemeSettings = dynamic(
   () => import("../settins-modals/theme-settings/theme-settings"),
   {
-    ssr: false,
     loading: () => (
       <div className="w-full flex flex-col gap-1 aspect-[16/6]">
         <Skeleton.Node active className="!w-full !h-[50px]" />
@@ -128,7 +127,8 @@ const SettingTabsContainer = () => {
           header: "w-full text-center font-Medium !bg-transparent !py-1 !m-0",
           content: clsx(
             "xl:!w-[55%] ldxl:!w-1/2 !w-full max-w-full !p-6 !bg-BG !h-full !mx-auto",
-            openModal.key == "ExchangeRangePoints" && "lg:!w-[50%] dxl:!w-[40%]",
+            openModal.key == "ExchangeRangePoints" &&
+              "lg:!w-[50%] dxl:!w-[40%]",
             openModal.key == "RulesSetting" && "lg:!w-[50%] dxl:!w-[40%]"
           ),
           footer: "!hidden",
@@ -169,7 +169,7 @@ const SettingTabsContainer = () => {
               handleCancel={() => toggleModal(false)}
               handleOk={() => toggleModal(true)}
             />
-          )
+          ),
         }[openModal.key as keyof typeof tabsList] || null}
       </Modal>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { IGenderStaticsWithPurchases } from "@/types/genderTypes";
-import { getGenderStatisticsWithPurchases } from "@/utils/genderServices";
+import { getGenderStatisticsWithPurchases } from "@/api/genderServices";
 import { RedoOutlined } from "@ant-design/icons";
 import { Alert, Skeleton } from "antd";
 import { useQuery } from "@tanstack/react-query";

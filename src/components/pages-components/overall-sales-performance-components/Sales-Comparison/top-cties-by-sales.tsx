@@ -1,14 +1,13 @@
 "use client";
-import { getTopCitiesBySales } from "@/utils/report_sale-apis/report_saleService";
+import { getTopCitiesBySales } from "@/api/report_sale-apis/report_saleService";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { ApexOptions } from "apexcharts";
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
 import { Alert, InputNumber, Select, Button } from "antd";
-import { Skeleton } from "antd";
 import { LoadingOutlined, RedoOutlined } from "@ant-design/icons";
-import CartCardContainer from "@/components/shared/chart-card/chart-card-containetr";
-import GenerateCustomChartTooltip from "@/components/shared/chart-card/custom-chart-tooltip";
+import CartCardContainer from "@/components/shared-components/chart-card/chart-card-containetr";
+import GenerateCustomChartTooltip from "@/components/shared-components/chart-card/custom-chart-tooltip";
 
 const TopCitiesBySales = () => {
   const [TopCitiesBySalesConfigs, setTopCitiesBySalesConfigs] = useState<{
@@ -96,7 +95,7 @@ const TopCitiesBySales = () => {
             tooltip: {
               enabled: true,
               theme: "light",
-              custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+              custom: function ({ dataPointIndex }) {
                 return GenerateCustomChartTooltip({
                   title: {
                     title: "شهر",
@@ -133,11 +132,12 @@ const TopCitiesBySales = () => {
     });
   };
 
-  const handleLimitChange = (value: number) => {
-    setTempTopCitiesBySalesConfigs({
-      ...tempTopCitiesBySalesConfigs,
-      limit: value,
-    });
+  const handleLimitChange = (value: number | null) => {
+    if (value)
+      setTempTopCitiesBySalesConfigs({
+        ...tempTopCitiesBySalesConfigs,
+        limit: value,
+      });
   };
 
   if (!isLoading && !isRefetching && isError)
@@ -171,7 +171,7 @@ const TopCitiesBySales = () => {
           <div className="w-full h-full flex items-center justify-center bg-gray-100">
             <LoadingOutlined className="text-[100px]" />
           </div>
-        ) : null
+        ) : undefined
       }
       headerElement={
         <div className="flex items-center justify-end gap-4 w-full ">

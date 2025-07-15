@@ -3,7 +3,7 @@ import { IMenuItem } from "@/types/ditgitalmenu-types/menu";
 import {
   createMenuItem,
   editMenuItem,
-} from "@/utils/digitalmenu-api/menuService";
+} from "@/api/digitalmenu-api/menuService";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";

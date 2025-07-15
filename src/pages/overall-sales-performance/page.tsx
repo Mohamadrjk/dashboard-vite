@@ -1,7 +1,7 @@
-import SalesComparison from "@/components/overall-sales-performance-components/Sales-Comparison/sales-comparison";
-import AppLoading from "../loading";
+import TopCitiesBySales from "@/components/pages-components/overall-sales-performance-components/Sales-Comparison/top-cties-by-sales";
+import AppLoading from "@/components/shared-components/loadings-components/app-loading/loading";
 import { Suspense } from "react";
-import TopCitiesBySales from "@/components/overall-sales-performance-components/Sales-Comparison/top-cties-by-sales";
+
 const OverallSalesPerformancePage = () => {
   return (
     <div className="p-4 w-full h-full gap-4 overflow-hidden">

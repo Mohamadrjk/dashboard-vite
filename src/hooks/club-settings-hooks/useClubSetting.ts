@@ -1,10 +1,10 @@
 import { initClubSettings } from "@/redux/clubSetting/clubSettingSlice";
 import { IClubSettingPayload } from "@/types/club-types/club-setting-type";
-import { IClubHttpResult } from "@/utils/club-api/club-http-result";
+import { IClubHttpResult } from "@/api/club-api/club-http-result";
 import {
   GetCompanyClubSettings,
   UpdateSettings,
-} from "@/utils/club-api/club-setting-service";
+} from "@/api/club-api/club-setting-service";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";

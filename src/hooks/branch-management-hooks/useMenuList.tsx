@@ -1,5 +1,5 @@
 import { IMenuItem, IMenuResult } from "@/types/ditgitalmenu-types/menu";
-import { getMenuList } from "@/utils/digitalmenu-api/menuService";
+import { getMenuList } from "@/api/digitalmenu-api/menuService";
 import { useQuery } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
 import { useEffect, useMemo, useState } from "react";

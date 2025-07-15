@@ -1,7 +1,7 @@
 import { useNotify } from "@/components/shared-components/notife/notife";
 import useCompanyList from "@/hooks/branch-management-hooks/useCompanyList";
 import { IBranchItem } from "@/types/ditgitalmenu-types/branch";
-import { createBranchItem } from "@/utils/digitalmenu-api/branchesService";
+import { createBranchItem } from "@/api/digitalmenu-api/branchesService";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -79,8 +79,8 @@ function useAddNewBranch(realodMethod?: () => void) {
       } else {
         notify("error", "خطا در ایجاد شعبه");
       }
-    } catch (error) {
-      notify("error", error.response.data.message);
+    } catch (error: any) {
+      notify("error", error?.response.data.message);
     } finally {
       setLoading(false);
     }

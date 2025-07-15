@@ -1,7 +1,7 @@
 "use client";
 import TopBarCardItem from "@/components/dashboard-components/dashboars-topbar-carts/topBarCardItem";
 import { IRankingPageLabels } from "@/types/club-types/club-reports-type";
-import { getRankingPageLabels } from "@/utils/club-api/club-report-service";
+import { getRankingPageLabels } from "@/api/club-api/club-report-service";
 import { RedoOutlined } from "@ant-design/icons";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Alert, Skeleton } from "antd";

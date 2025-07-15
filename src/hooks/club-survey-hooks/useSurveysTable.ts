@@ -2,8 +2,8 @@ import { ISurvey } from "@/types/club-types/club-surveys-type";
 import {
   IClubHttpResult,
   ITableResult,
-} from "@/utils/club-api/club-http-result";
-import { getCompanySurveyList } from "@/utils/club-api/club-survey-service";
+} from "@/api/club-api/club-http-result";
+import { getCompanySurveyList } from "@/api/club-api/club-survey-service";
 import { useQuery } from "@tanstack/react-query";
 import { useState, useMemo } from "react";
 

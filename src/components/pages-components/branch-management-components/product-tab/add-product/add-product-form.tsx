@@ -5,13 +5,13 @@ import { LoadingOutlined } from "@ant-design/icons";
 import DashboardImageUploader from "@/components/shared-components/uploader/image-uploader";
 import ImageIcon from "@/components/shared-components/custom-icons/imagesIcon";
 import { IProductItem } from "@/types/ditgitalmenu-types/product";
-import ReusableFormField from "@/components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-input";
 import useCategoryList from "@/hooks/branch-management-hooks/useCategoryList";
 import SelectDropdown from "../../branch-tab/selectDropDown";
 import { IFormFiledProps } from "../../branch-tab/add-branch-form/useAddNewBranch";
 import EditProductImageSelect from "../edit-product/ImageSelectComponent";
-import ReusableFormFieldTextArea from "@/components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-textArea";
-import ReusableFormCheckBox from "@/components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-checkbox";
+import ReusableFormFieldTextArea from "@/components/pages-components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-textArea";
+import ReusableFormField from "@/components/pages-components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-input";
+import ReusableFormCheckBox from "@/components/pages-components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-checkbox";
 
 interface AddNewProductFormProps {
   AddProductForm: UseFormReturn<IProductItem>;

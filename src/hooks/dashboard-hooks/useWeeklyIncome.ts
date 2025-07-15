@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getWeeklyIncome } from "@/utils/dashboardServices"; // Adjust the import path
+import { getWeeklyIncome } from "@/api/dashboardServices"; // Adjust the import path
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
 import moment from "jalali-moment";
 

@@ -5,7 +5,7 @@ import { Alert, MenuProps, Skeleton } from "antd";
 import { useEffect, useState, useCallback } from "react";
 import "animate.css";
 
-import { getTopCustomers } from "@/utils/customerService";
+import { getTopCustomers } from "@/api/customerService";
 import { ITopCustomers } from "@/types/customers-model";
 import TopCustomerCardItem from "./top-customer-card";
 import { Icon } from "@iconify/react";

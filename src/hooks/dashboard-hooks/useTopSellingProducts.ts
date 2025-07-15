@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getTopCellingProducts } from "@/utils/dashboardServices"; // Adjust the import path
+import { getTopCellingProducts } from "@/api/dashboardServices"; // Adjust the import path
 
 const useTopSellingProducts = () => {
   return useQuery({

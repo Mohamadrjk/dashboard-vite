@@ -1,16 +1,17 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import { getRevenueShare } from "@/utils/report_sale-apis/report_saleService";
+import { getRevenueShare } from "@/api/report_sale-apis/report_saleService";
 import { useMemo, useState } from "react";
 import { ApexOptions } from "apexcharts";
 import { Skeleton } from "antd";
 import Chart from "react-apexcharts";
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
-import FilterBar from "@/components/shared/chart-card/chart-filterBar";
-import { chartColors } from "@/components/shared/chart-card/charts-certain-data";
-import PieChartRightSideList from "@/components/shared/chart-card/pieChart-right-silde-list";
-import ComponentInnerError from "@/components/shared/component-inner-error/component-inner-error";
-import GenerateCustomChartTooltip from "@/components/shared/chart-card/custom-chart-tooltip";
+import { chartColors } from "@/components/shared-components/chart-card/charts-certain-data";
+import GenerateCustomChartTooltip from "@/components/shared-components/chart-card/custom-chart-tooltip";
+import FilterBar from "@/components/shared-components/chart-card/chart-filterBar";
+import PieChartRightSideList from "@/components/shared-components/chart-card/pieChart-right-silde-list";
+import ComponentInnerError from "@/components/shared-components/component-inner-error/component-inner-error";
+
 const TotalRevenueDistribution = () => {
   const [config, setConfig] = useState({ interval: "1 MONTH", limit: 10 });
   const { data, isLoading, isRefetching, isError, refetch } = useQuery({
@@ -51,7 +52,7 @@ const TotalRevenueDistribution = () => {
         show: false,
       },
       tooltip: {
-        custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+        custom: function ({ seriesIndex }) {
           const productData = data.data.data[seriesIndex];
 
           return GenerateCustomChartTooltip({
@@ -117,9 +118,11 @@ const TotalRevenueDistribution = () => {
         <div className="flex items-center justify-center grow h-full animate-fadeIn">
           <PieChartRightSideList
             chartColors={chartColors}
-            products={data.data.data.map((item) => ({
-              product_name: item.product_name,
-            }))}
+            products={
+              data?.data?.data?.map((item) => ({
+                product_name: item.product_name,
+              })) || []
+            }
           />
           <div className="grow  h-full">
             <Chart

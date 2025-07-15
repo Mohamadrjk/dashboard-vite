@@ -2,7 +2,7 @@
 import { ITopProductsByGender } from "@/types/customers-model";
 import { useCallback, useEffect, useState } from "react";
 import TopProductsByGenderList from "./top-products-by-gender-list";
-import { getTopProductsByGender } from "@/utils/customerService";
+import { getTopProductsByGender } from "@/api/customerService";
 import { Alert, Skeleton } from "antd";
 import { RedoOutlined } from "@ant-design/icons";
 import SalesByGenderAndCityReportConfigs from "../../gender-components/new-cityGenders-report/city-and-gender-dateFilter";

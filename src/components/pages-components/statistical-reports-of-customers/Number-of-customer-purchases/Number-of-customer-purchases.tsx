@@ -3,7 +3,7 @@ import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { useEffect, useState } from "react";
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
-import { getCustomerPurchaseCount } from "@/utils/customerService";
+import { getCustomerPurchaseCount } from "@/api/customerService";
 import { Alert, Skeleton } from "antd";
 import { RedoOutlined } from "@ant-design/icons";
 // Example Data

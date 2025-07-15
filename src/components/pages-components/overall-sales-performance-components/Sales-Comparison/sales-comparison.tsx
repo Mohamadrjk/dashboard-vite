@@ -1,15 +1,16 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { getSalesComparison } from "@/utils/report_sale-apis/report_saleService";
+import { getSalesComparison } from "@/api/report_sale-apis/report_saleService";
 import { useMemo, useState } from "react";
 import { Select, Skeleton } from "antd";
-import ComponentInnerError from "@/components/shared/component-inner-error/component-inner-error";
-import { chartColors } from "@/components/shared/chart-card/charts-certain-data";
-import PieChartRightSideList from "@/components/shared/chart-card/pieChart-right-silde-list";
+
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
+import ComponentInnerError from "@/components/shared-components/component-inner-error/component-inner-error";
+import PieChartRightSideList from "@/components/shared-components/chart-card/pieChart-right-silde-list";
+import { chartColors } from "@/components/shared-components/chart-card/charts-certain-data";
 const INTERVAL_OPTIONS = [
   {
     value: "PREVIOUS_MONTH",
@@ -99,7 +100,7 @@ const SalesComparison = () => {
               color: "#000",
               offsetY: 10,
               fontFamily: "Regular",
-              formatter: function (val, { seriesIndex, w }) {
+              formatter: function (val: any) {
                 // Convert number to Persian format and append the correct unit
                 return `${val < 100 ? "%" : "تومان"} ${numberToPersianPrice(
                   val
@@ -181,10 +182,10 @@ const SalesComparison = () => {
           <PieChartRightSideList
             chartColors={chartColors}
             products={INTERVAL_OPTIONS_LABELS.map((item) => ({
-              product_name: `${item.label}: ${numberToPersianPrice(
-                data?.data?.data[item.key]
-              )} ${item.key == "percentage_difference" ? "%" : "تومان"}`,
-            }))}
+              product_name: `${item.label}: ${
+                numberToPersianPrice(data?.data?.data[item.key]) 
+              } ${item.key == "percentage_difference" ? "%" : "تومان"}`,
+            }))|| []}
             wrapperClassName="!w-[40%]"
             listItemClassName="[&_.name-item]:max-w-full "
           />

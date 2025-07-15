@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { InboxOutlined } from "@ant-design/icons";
 import { message, Upload } from "antd";
-import UploadedImagePreview from "./uploaded-image-preview";
-import { promises } from "dns";
 import { useImageUploader } from "@/hooks/common-hooks/useImageUploader";
 import clsx from "clsx";
+import UploadedImagePreview from "../notife/uploaded-image-preview";
 
 const { Dragger } = Upload;
 
@@ -101,7 +100,7 @@ const DashboardImageUploader: React.FC<DashboardImageUploaderProps> = ({
       {showUploadedImage && uploadedImage ? (
         <UploadedImagePreview
           base64={uploadedImage}
-          fileName={uploadedFile.name}
+          fileName={uploadedFile?.name||""}
           handleDeleteImage={deleteImage}
         />
       ) : (

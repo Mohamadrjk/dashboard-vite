@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getCityStates } from "@/utils/dashboardServices"; // Adjust the import path
+import { getCityStates } from "@/api/dashboardServices"; // Adjust the import path
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
 
 const useGetCityStates = () => {

@@ -5,7 +5,7 @@ import { QueryObserverResult, RefetchOptions } from "@tanstack/react-query";
 import {
   IClubHttpResult,
   ITableResult,
-} from "@/utils/club-api/club-http-result";
+} from "@/api/club-api/club-http-result";
 import { ISurvey } from "@/types/club-types/club-surveys-type";
 
 interface ClubSurveyTAbleHeaderProps {

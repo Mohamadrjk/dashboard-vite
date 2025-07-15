@@ -2,8 +2,8 @@ import {
   IMenuDetail,
   IMenuDetailResult,
 } from "@/types/ditgitalmenu-types/menu";
-import { Empty, Form, Tooltip } from "antd";
-import React, { useCallback } from "react";
+import { Empty, Form, Image, Tooltip } from "antd";
+import { useCallback } from "react";
 import { UseFormReturn } from "react-hook-form";
 import { CloseOutlined, LoadingOutlined } from "@ant-design/icons";
 import SelectMultiDropdown from "../../branch-tab/selectMultiItem";
@@ -11,7 +11,6 @@ import { useCategorySelection } from "./hooks/useCategorySelection";
 import { AxiosResponse } from "axios";
 import ProductSelectModal from "./product-select-modal";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import Image from "next/image";
 import SelectionSkeleton from "./SelectionSkeleton";
 import { ICategoryItem } from "@/types/ditgitalmenu-types/category";
 import clsx from "clsx";
@@ -74,19 +73,31 @@ function AssignProductToMenu({
           </div>
         </div>
         <div className=" grid md:grid-cols-3  lg:grid-cols-4  min-[450px]:grid-cols-2  overflow-auto max-h-[40vh] no-scrollbar gap-4">
-          {payloadData ? payloadData.categories.length > 0 ? (
-            payloadData?.categories.map(
-              (i, index) =>
-                getCategoryDetail(i.category_id) && (
-                  <CategorySelectItem key={index} handleSelectCategory={handleSelectCategory} item={getCategoryDetail(i.category_id)} productLength={i.products.length} setOpenProductModal={setOpenProductModal} />
-                )
+          {payloadData ? (
+            payloadData.categories.length > 0 ? (
+              payloadData?.categories.map(
+                (i, index) =>
+                  getCategoryDetail(i.category_id) && (
+                    <CategorySelectItem
+                      key={index}
+                      handleSelectCategory={handleSelectCategory}
+                      item={getCategoryDetail(i.category_id)}
+                      productLength={i.products.length}
+                      setOpenProductModal={setOpenProductModal}
+                    />
+                  )
+              )
+            ) : (
+              <Empty
+                className=" col-span-full"
+                description={
+                  <span className=" font-Regular text-Secondary">
+                    دسته بندی ای انتخاب نشده است
+                  </span>
+                }
+              />
             )
           ) : (
-            <Empty className=" col-span-full" description={
-              <span className=" font-Regular text-Secondary">
-                دسته بندی ای انتخاب نشده است
-              </span>
-            } />) : (
             <SelectionSkeleton />
           )}
         </div>
@@ -119,69 +130,78 @@ function AssignProductToMenu({
 
 export default AssignProductToMenu;
 
+const CategorySelectItem = ({
+  item,
+  handleSelectCategory,
+  setOpenProductModal,
+  productLength,
+}: {
+  productLength: number;
+  item: ICategoryItem;
+  handleSelectCategory: any;
+  setOpenProductModal: any;
+}) => {
+  return (
+    item && (
+      <div className="flex relative border rounded-md  overflow-hidden   items-center  justify-between ">
+        <div className="aspect-[16/7] w-full md:aspect-video relative flex gap-1 flex-col items-center">
+          <Image
+            src={
+              item?.image_base64 ? item?.image_base64 : "/placeholder/Logo.png"
+            }
+            width={300}
+            height={300}
+            alt={item && item?.name + item?.category_id}
+            className={clsx(
+              " w-full h-full   max-lg:aspect-video aspect-square  object-contain",
+              item?.image_base64 && " !object-cover"
+            )}
+          />
 
-const CategorySelectItem = ({ item, handleSelectCategory, setOpenProductModal, productLength }: { productLength: number, item: ICategoryItem, handleSelectCategory: any, setOpenProductModal: any }) => {
-  return item && (
-    <div className="flex relative border rounded-md  overflow-hidden   items-center  justify-between "
-    >
-      <div className="aspect-[16/7] w-full md:aspect-video relative flex gap-1 flex-col items-center">
-        <Image
-          src={
-            item?.image_base64 ? item?.image_base64 : "/placeholder/Logo.png"
-          }
-          width={300}
-          height={300}
-          alt={
-            item.name +
-            item.category_id
-          }
-          className={clsx(" w-full h-full   max-lg:aspect-video aspect-square  object-contain", item?.image_base64 && " !object-cover")}
-        />
-
-        <div className=" md:p-2 w-full overflow-auto p-1  flex flex-col gap-2 items-center justify-center">
-          <span className=" md:text-lg text-base w-full  text-ellipsis  overflow-hidden text-nowrap">
-            {item.name}
-          </span>
-          <div className="md:text-base text-xs flex max-w-full  gap-2">
-            <span>تعداد کالاهای انتخاب شده:</span>
-            <span>{productLength} </span>
+          <div className=" md:p-2 w-full overflow-auto p-1  flex flex-col gap-2 items-center justify-center">
+            <span className=" md:text-lg text-base w-full  text-ellipsis  overflow-hidden text-nowrap">
+              {item.name}
+            </span>
+            <div className="md:text-base text-xs flex max-w-full  gap-2">
+              <span>تعداد کالاهای انتخاب شده:</span>
+              <span>{productLength} </span>
+            </div>
           </div>
         </div>
-
-      </div>
-      <div className=" bg-white absolute top-0 left-0 z-10 flex flex-row  items-center">
-        <div
-          onClick={() => {
-            setOpenProductModal({
-              itemId: item.category_id,
-              state: true,
-            });
-          }}
-          className="  hover:bg-gray-300 cursor-pointer transition-all duration-300 p-2 hover:opacity-100 opacity-50 active:scale-75"
-        >
-          <Tooltip title="انتخاب محصول">
-            <Icon
-              icon="mage:edit"
-              width="24"
-              height="24"
-              style={{ color: "var(--secondary)" }}
-            />
-          </Tooltip>
+        <div className=" bg-white absolute top-0 left-0 z-10 flex flex-row  items-center">
+          <div
+            onClick={() => {
+              setOpenProductModal({
+                itemId: item.category_id,
+                state: true,
+              });
+            }}
+            className="  hover:bg-gray-300 cursor-pointer transition-all duration-300 p-2 hover:opacity-100 opacity-50 active:scale-75"
+          >
+            <Tooltip title="انتخاب محصول">
+              <Icon
+                icon="mage:edit"
+                width="24"
+                height="24"
+                style={{ color: "var(--secondary)" }}
+              />
+            </Tooltip>
+          </div>
+          <span
+            role="button"
+            className="text-Alert  hover:bg-gray-300 cursor-pointer  transition-all duration-300 p-2 hover:opacity-100 opacity-50 active:scale-75 "
+            onClick={() =>
+              handleSelectCategory({
+                key: String(item.category_id),
+              })
+            }
+          >
+            <Tooltip title="حذف دسته">
+              <CloseOutlined />
+            </Tooltip>
+          </span>
         </div>
-        <span
-          role="button"
-          className="text-Alert  hover:bg-gray-300 cursor-pointer  transition-all duration-300 p-2 hover:opacity-100 opacity-50 active:scale-75 "
-          onClick={() =>
-            handleSelectCategory({
-              key: String(item.category_id),
-            })
-          }
-        >
-          <Tooltip title="حذف دسته">
-            <CloseOutlined />
-          </Tooltip>
-        </span>
       </div>
-    </div>
-  )
-}
+    )
+  );
+};

@@ -1,7 +1,7 @@
 "use client";
 
 import { IAnalysisLoyaltyMonthly } from "@/types/customers-model";
-import { getAnalysisLoyaltyMonthly } from "@/utils/customerService";
+import { getAnalysisLoyaltyMonthly } from "@/api/customerService";
 import { RedoOutlined } from "@ant-design/icons";
 import { Alert, Skeleton } from "antd";
 import { ApexOptions } from "apexcharts";

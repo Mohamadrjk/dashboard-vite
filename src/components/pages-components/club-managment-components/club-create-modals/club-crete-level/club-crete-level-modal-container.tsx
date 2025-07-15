@@ -3,7 +3,7 @@ import { Modal, TabsProps, Tabs } from "antd";
 import clsx from "clsx";
 import style from "../../club-levels-components/club-edit-levels-components/club-edit-levels-container.module.css";
 import { useEffect, useState } from "react";
-import { onAddLevelToRanking } from "@/utils/club-api/club-ranking-service";
+import { onAddLevelToRanking } from "@/api/club-api/club-ranking-service";
 import { useNotify } from "@/components/shared-components/notife/notife";
 import { ICreateLevelPayload } from "@/types/club-types/club-levels-type";
 import CreateNewClubLevel from "./create-level-form-components/club-crete-level-content";

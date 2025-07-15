@@ -1,18 +1,15 @@
-import { Form, } from "antd";
+import { Form } from "antd";
 import { lazy, useMemo } from "react";
 import { IBranchItem } from "@/types/ditgitalmenu-types/branch";
 import { UseFormReturn } from "react-hook-form";
 import { LoadingOutlined } from "@ant-design/icons";
 import { LatLngExpression, LatLngLiteral } from "leaflet";
 import { IFormFiledProps } from "./useAddNewBranch";
-import ReusableFormField from "@/components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-input";
 import OperationFileds from "./OperationTextFields";
-import ReusableFormCheckBox from "@/components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-checkbox";
 import EditProductImageSelect from "../../product-tab/edit-product/ImageSelectComponent";
-const SelectAddressMap = lazy(
-  () => import("../map-selection/map-selection"),
-
-);
+import ReusableFormField from "@/components/pages-components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-input";
+import ReusableFormCheckBox from "@/components/pages-components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-checkbox";
+const SelectAddressMap = lazy(() => import("../map-selection/map-selection"));
 interface AddNewBranchFormProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   AddBranchForm: UseFormReturn<IBranchItem, any, undefined>;
@@ -38,9 +35,6 @@ function AddNewBranchForm({
 
   const watchFileds = watch(["latitude", "longitude"]);
   const watchImage = watch("image_url");
-  const handleChangeImage = (base64Url) => {
-    setValue("image_url", base64Url);
-  };
   const handleSelectLocationFromMap = async (e: LatLngLiteral) => {
     try {
       const response = await fetch(
@@ -80,22 +74,21 @@ function AddNewBranchForm({
               isLoading={loading}
               className="h-[70px]"
             />
-          ) : (
-            null
-            // <DashboardImageUploader
-            //   onImageConvert={(base64) => handleChangeImage(base64)}
-            //   info={
-            //     <span className="font-Regular">
-            //       تصویر را اینجا کشیده و رها کنید
-            //     </span>
-            //   }
-            //   maxHeight={500}
-            //   maxWidth={500}
-            //   hasSizeLimit={false}
-            //   successMessage=" "
-            //   showUploadedImage
-            // />
-          )}
+          ) : null
+          // <DashboardImageUploader
+          //   onImageConvert={(base64) => handleChangeImage(base64)}
+          //   info={
+          //     <span className="font-Regular">
+          //       تصویر را اینجا کشیده و رها کنید
+          //     </span>
+          //   }
+          //   maxHeight={500}
+          //   maxWidth={500}
+          //   hasSizeLimit={false}
+          //   successMessage=" "
+          //   showUploadedImage
+          // />
+          }
         </div>
         <div className=" grid grid-cols-2  gap-x-5 font-Regular">
           {Object.entries(FormFiledItems)

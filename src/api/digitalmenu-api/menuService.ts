@@ -6,7 +6,7 @@ import {
   IMenuItem,
   IMenuResult,
 } from "@/types/ditgitalmenu-types/menu";
-import { createUrlSearchParams } from "../common-methods/create-url-param";
+import { createUrlSearchParams } from "../../utils/common-methods/create-url-param";
 
 const getMenuList = async () => {
   return await axiosInstance.get<unknown, AxiosResponse<IMenuResult>>(

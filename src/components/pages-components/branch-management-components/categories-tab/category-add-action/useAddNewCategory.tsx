@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { IFormFiledProps } from "../../branch-tab/add-branch-form/useAddNewBranch";
-import { createCategoryItem } from "@/utils/digitalmenu-api/categoryService";
+import { createCategoryItem } from "@/api/digitalmenu-api/categoryService";
 const validationSchema = yup.object().shape({
   name: yup.string().required("فیلد نام شعبه الزامی است"),
   image_base64: yup.string(),

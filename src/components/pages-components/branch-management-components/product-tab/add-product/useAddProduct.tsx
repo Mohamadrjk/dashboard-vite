@@ -1,6 +1,6 @@
 import { useNotify } from "@/components/shared-components/notife/notife";
 import { IProductItem } from "@/types/ditgitalmenu-types/product";
-import { createProductItem } from "@/utils/digitalmenu-api/productService";
+import { createProductItem } from "@/api/digitalmenu-api/productService";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";

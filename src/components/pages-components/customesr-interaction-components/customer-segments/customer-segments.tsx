@@ -4,7 +4,7 @@ import { ILoyaltyDistribution } from "@/types/customers-model";
 import {
   getCustomerLoyaltyDistribution,
   getCustomersClvReport,
-} from "@/utils/customerService";
+} from "@/api/customerService";
 import { RedoOutlined } from "@ant-design/icons";
 import { Alert, Skeleton } from "antd";
 import { ApexOptions } from "apexcharts";

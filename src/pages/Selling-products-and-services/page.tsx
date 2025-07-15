@@ -1,11 +1,6 @@
+import { LazyBottomSellingProductsAnalysis, LazySalesComparison, LazyTopSellingProductsAnalysis, LazyTotalRevenueDistribution } from "@/components/pages-components/overall-sales-performance-components/Selling-products-and-services-components/seliing-analysis-index";
+import AppLoading from "@/components/shared-components/loadings-components/app-loading/loading";
 import { Suspense } from "react";
-import AppLoading from "../loading";
-import {
-  LazyTopSellingProductsAnalysis,
-  LazyBottomSellingProductsAnalysis,
-  LazyTotalRevenueDistribution,
-  LazySalesComparison,
-} from "@/components/overall-sales-performance-components/Selling-products-and-services-components/seliing-analysis-index";
 
 const SellingProductsAndServicesPage = () => {
   return (

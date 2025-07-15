@@ -2,7 +2,7 @@ import { Questions } from "@/components/club-managment-components/club-surveys-c
 import { SurveyFormModel } from "@/components/club-managment-components/club-surveys-components/survey-modals/create-survey-modal/survey-form-components/survey-form-container";
 
 import { useNotify } from "@/components/shared-components/notife/notife";
-import { GenerateSurvey } from "@/utils/club-api/club-survey-service";
+import { GenerateSurvey } from "@/api/club-api/club-survey-service";
 import { useEffect, useState } from "react";
 
 const useNewSurvey = (handleCloseModal: () => void) => {

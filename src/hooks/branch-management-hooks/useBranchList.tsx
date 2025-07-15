@@ -1,5 +1,5 @@
 import { IBranchItem, IBranchResult } from "@/types/ditgitalmenu-types/branch";
-import { getBranchesList } from "@/utils/digitalmenu-api/branchesService";
+import { getBranchesList } from "@/api/digitalmenu-api/branchesService";
 import { useQuery } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
 import { useMemo, useState } from "react";

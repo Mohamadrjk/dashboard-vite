@@ -1,4 +1,4 @@
-import { getSalesPercentages } from "@/utils/product-analysis-apis/salesTrendAnalysisServise";
+import { getSalesPercentages } from "@/api/product-analysis-apis/salesTrendAnalysisServise";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 

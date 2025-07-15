@@ -10,7 +10,7 @@ import {
   addCompanyClubBanner,
   deleteCompanyClubBanners,
   updateCompanyClubBanners,
-} from "@/utils/club-api/club-setting-service";
+} from "@/api/club-api/club-setting-service";
 import { IBannerList } from "@/components/club-managment-components/club-settings-components/settins-modals/program-settings-modal-content/program-banner-selecting/banner-selecting-container";
 
 const useUpdateClubBanner = () => {

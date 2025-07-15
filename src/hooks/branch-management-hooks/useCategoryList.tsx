@@ -2,7 +2,7 @@ import {
   ICategoryItem,
   ICategoryResult,
 } from "@/types/ditgitalmenu-types/category";
-import { getCategoryList } from "@/utils/digitalmenu-api/categoryService";
+import { getCategoryList } from "@/api/digitalmenu-api/categoryService";
 import { useQuery } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
 import { useEffect, useMemo, useState } from "react";

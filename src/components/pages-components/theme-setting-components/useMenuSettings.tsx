@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import useCompanyList from "@/hooks/branch-management-hooks/useCompanyList";
 import { ICompanyItem } from "@/types/ditgitalmenu-types/company";
-import { updateCompanyInfo } from "@/utils/digitalmenu-api/companyService";
+import { updateCompanyInfo } from "@/api/digitalmenu-api/companyService";
 import { useNotify } from "../shared/notife/notife";
 import { useForm } from "react-hook-form";
 import * as Yup from 'yup'

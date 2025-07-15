@@ -1,6 +1,6 @@
 import { CloseCircleOutlined, PlusSquareOutlined } from "@ant-design/icons";
 import { Modal } from "antd";
-import React, { useState } from "react";
+import { useState } from "react";
 import AddNewBranchForm from "./add-new-branch-form";
 import useAddNewBranch from "./useAddNewBranch";
 

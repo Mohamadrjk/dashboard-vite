@@ -10,7 +10,7 @@ import MenuEditModal from "../edit-menu/edit-menu-modal";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import useEditMenu from "../edit-menu/useEditMenu";
 import MenuDetailModal from "../menu-detail/menu-detail-modal";
-import CustomPagination from "@/components/shared/custom-pagination/custom-pagination";
+import CustomPagination from "@/components/shared-components/custom-pagination/custom-pagination";
 export interface MenuDataProps {
   isLoading: boolean;
   isRefetching: boolean;

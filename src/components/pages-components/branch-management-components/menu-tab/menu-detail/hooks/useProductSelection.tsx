@@ -1,7 +1,7 @@
 import { IMenuDetailSlice, menuDetailSubmitPayload, menuDetailUpdateProducts } from '@/redux/menuDetail/menuDetailSlice';
 import { RootState } from '@/redux/store';
 import { IProductResult } from '@/types/ditgitalmenu-types/product';
-import { getProductsList } from '@/utils/digitalmenu-api/productService';
+import { getProductsList } from '@/api/digitalmenu-api/productService';
 import { useQuery } from '@tanstack/react-query';
 import { AxiosResponse } from 'axios';
 import { useCallback, useEffect, useMemo, useState } from 'react'

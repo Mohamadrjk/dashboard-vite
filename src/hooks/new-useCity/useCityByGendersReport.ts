@@ -1,5 +1,5 @@
 import { ISalesByGenderAndCityReport } from "@/types/genderTypes";
-import { getSalesByGenderAndCityReport } from "@/utils/genderServices";
+import { getSalesByGenderAndCityReport } from "@/api/genderServices";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 

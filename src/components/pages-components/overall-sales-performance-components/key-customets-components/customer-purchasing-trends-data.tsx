@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
-import GenerateCustomChartTooltip from "@/components/shared/chart-card/custom-chart-tooltip";
+import GenerateCustomChartTooltip from "@/components/shared-components/chart-card/custom-chart-tooltip";
 const data = [
   {
     id_customer: 8,
@@ -254,7 +254,7 @@ const CustomerPurchasingTrendsData = () => {
         theme: "light",
         cssClass: "!bg-transparent",
         followCursor: true,
-        custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+        custom: function ({ series, seriesIndex, dataPointIndex }) {
           return GenerateCustomChartTooltip({
             title: {
               title: "مشتری",

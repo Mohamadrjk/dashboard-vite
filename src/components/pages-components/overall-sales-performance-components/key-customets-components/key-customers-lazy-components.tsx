@@ -1,15 +1,13 @@
 "use client";
+import { dynamic } from "@/components/shared-components/dynamicImport/dynamicImport";
 import { Skeleton } from "antd";
-
-import { lazy } from "react";
 
 const LazyCustomerPurchasingTrendsData = dynamic(
   () =>
     import(
-      "@/components/overall-sales-performance-components/key-customets-components/customer-purchasing-trends-data"
+      "@/components/pages-components/overall-sales-performance-components/key-customets-components/customer-purchasing-trends-data"
     ),
   {
-    ssr: false,
     loading: () => (
       <div className="w-full !aspect-[16/5] xl:!aspect-[16/11] dxl:!aspect-[16/8] ldxl:!aspect-[17/7]">
         <Skeleton.Node active className="!w-full !h-full" />
@@ -21,10 +19,9 @@ const LazyCustomerPurchasingTrendsData = dynamic(
 const LazyKeyCustomersShareSales = dynamic(
   () =>
     import(
-      "@/components/overall-sales-performance-components/key-customets-components/key-customers-share-sales"
+      "@/components/pages-components/overall-sales-performance-components/key-customets-components/key-customers-share-sales"
     ),
   {
-    ssr: false,
     loading: () => (
       <div className="w-full grow h-full flex items-center justify-between bg-Highlighter rounded-[10px] p-2">
         <Skeleton
@@ -44,10 +41,9 @@ const LazyKeyCustomersShareSales = dynamic(
 const LazyTopCustomersByers = dynamic(
   () =>
     import(
-      "@/components/overall-sales-performance-components/key-customets-components/top-customers-byers"
+      "@/components/pages-components/overall-sales-performance-components/key-customets-components/top-customers-byers"
     ),
   {
-    ssr: false,
     loading: () => (
       <div className="w-full !aspect-[16/5] xl:!aspect-[16/11] dxl:!aspect-[16/8] ldxl:!aspect-[17/7]">
         <Skeleton.Node active className="!w-full !h-full" />

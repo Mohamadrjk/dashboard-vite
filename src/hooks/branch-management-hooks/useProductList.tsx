@@ -2,7 +2,7 @@ import {
   IProductItem,
   IProductResult,
 } from "@/types/ditgitalmenu-types/product";
-import { getProductsList } from "@/utils/digitalmenu-api/productService";
+import { getProductsList } from "@/api/digitalmenu-api/productService";
 import { useQuery } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
 import { useEffect, useMemo, useState } from "react";

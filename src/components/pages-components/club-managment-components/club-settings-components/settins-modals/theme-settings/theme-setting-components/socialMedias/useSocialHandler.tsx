@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react'
 import { IClubCompanySocialMedias } from '../../../../../../../types/club-types/club_theme_types';
 import { useQuery } from '@tanstack/react-query';
-import { getSocialMedias } from '@/utils/club-api/club-setting-service';
-import { IClubHttpResult } from '@/utils/club-api/club-http-result';
+import { getSocialMedias } from '@/api/club-api/club-setting-service';
+import { IClubHttpResult } from '@/api/club-api/club-http-result';
 
 const useGetSocialTypes = () => {
     return useQuery<IClubHttpResult<IClubCompanySocialMedias[]>, Error, IClubHttpResult<IClubCompanySocialMedias[]>, string[]>({

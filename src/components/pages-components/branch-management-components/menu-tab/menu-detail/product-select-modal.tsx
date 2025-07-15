@@ -1,9 +1,8 @@
 import { CloseCircleOutlined } from "@ant-design/icons";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { Empty, Modal, Tooltip } from "antd";
+import { Empty, Image, Modal, Tooltip } from "antd";
 import clsx from "clsx";
-import Image from "next/image";
-import React from "react";
+
 import ProductDetailModal from "./product-detail-modal";
 import { useNotify } from "@/components/shared-components/notife/notife";
 import useProductSelection from "./hooks/useProductSelection";

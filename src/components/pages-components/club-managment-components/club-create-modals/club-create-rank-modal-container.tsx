@@ -4,7 +4,7 @@ import clsx from "clsx";
 import style from "../club-levels-components/club-edit-levels-components/club-edit-levels-container.module.css";
 import CreateNewClubRank from "./club-create-rank-modal";
 import { useState } from "react";
-import { onAddCompanyRank } from "@/utils/club-api/club-ranking-service";
+import { onAddCompanyRank } from "@/api/club-api/club-ranking-service";
 import { useNotify } from "@/components/shared-components/notife/notife";
 import { useMutation } from "@tanstack/react-query";
 

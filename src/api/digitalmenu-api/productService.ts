@@ -4,7 +4,7 @@ import {
   IProductItem,
   IProductResult,
 } from "@/types/ditgitalmenu-types/product";
-import { createUrlSearchParams } from "../common-methods/create-url-param";
+import { createUrlSearchParams } from "../../utils/common-methods/create-url-param";
 
 const getProductsList = async (params?: { category_id?: string }) => {
   const searchParam = params && createUrlSearchParams(params);

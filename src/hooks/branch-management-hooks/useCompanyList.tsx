@@ -2,7 +2,7 @@ import {
   ICompanyItem,
   ICompanyResult,
 } from "@/types/ditgitalmenu-types/company";
-import { getCompanyList } from "@/utils/digitalmenu-api/companyService";
+import { getCompanyList } from "@/api/digitalmenu-api/companyService";
 import { useQuery } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
 import { useEffect, useState } from "react";

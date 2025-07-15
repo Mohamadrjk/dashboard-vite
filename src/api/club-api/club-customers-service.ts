@@ -1,7 +1,7 @@
 import { ICustomersListResponse } from "@/types/club-types/club-customers";
 import { IClubHttpResult } from "./club-http-result";
 import { clubApiInstance, ClubControllers } from "./club-api-confih";
-import { createUrlSearchParams } from "../common-methods/create-url-param";
+import { createUrlSearchParams } from "../../utils/common-methods/create-url-param";
 
 const getClubCustomersList = async (payload?: {
   page: number;

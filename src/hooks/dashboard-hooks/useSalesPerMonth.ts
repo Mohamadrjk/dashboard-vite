@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getSalesPerMonth } from "@/utils/dashboardServices"; // Adjust the import path
+import { getSalesPerMonth } from "@/api/dashboardServices"; // Adjust the import path
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
 import moment from "jalali-moment";
 const useSalesPerMonth = () => {

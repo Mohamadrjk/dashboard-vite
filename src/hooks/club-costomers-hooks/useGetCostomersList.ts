@@ -1,4 +1,4 @@
-import { getClubCustomersList } from "@/utils/club-api/club-customers-service";
+import { getClubCustomersList } from "@/api/club-api/club-customers-service";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 

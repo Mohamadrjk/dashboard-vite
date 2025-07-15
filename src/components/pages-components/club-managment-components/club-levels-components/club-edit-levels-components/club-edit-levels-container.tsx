@@ -13,7 +13,7 @@ import { NewLevelFormValues } from "@/hooks/levels-hooks/useCreateNewLevel";
 import { yupResolver } from "@hookform/resolvers/yup";
 import EditColorRowContainer from "./club-edit-color-row";
 import { useNotify } from "@/components/shared-components/notife/notife";
-import { onUpdateLevel } from "@/utils/club-api/club-ranking-service";
+import { onUpdateLevel } from "@/api/club-api/club-ranking-service";
 import * as yup from "yup";
 // ✅ Validation Schema
 const validationSchema = yup.object().shape({

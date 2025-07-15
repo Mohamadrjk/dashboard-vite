@@ -2,7 +2,7 @@ import {
   getActiveCustomers,
   getAvailableProducts,
   getTotalSales,
-} from "@/utils/dashboardServices";
+} from "@/api/dashboardServices";
 import { useQueries } from "@tanstack/react-query";
 
 const useDashboardCardsData = () => {

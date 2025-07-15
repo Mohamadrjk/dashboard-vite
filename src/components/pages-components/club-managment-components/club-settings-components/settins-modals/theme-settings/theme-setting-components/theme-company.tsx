@@ -5,7 +5,7 @@ import ThemeRowImageUploader from './uploaders/theme-setting-uploader';
 import ReusableFormFieldTextArea from '@/components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-textArea';
 import ThemeCompanyPhoneInput from './theme-company-phonenumber';
 import ClubUploaderProps from './uploaders/club-uploader';
-import { uploadToClubGalery } from '@/utils/club-api/club-gallery-service';
+import { uploadToClubGalery } from '@/api/club-api/club-gallery-service';
 import ThemeCompanySocial from './socialMedias/theme-company-social';
 const baseUploaderUrl = process.env.NEXT_PUBLIC_CLUB_MANAGEMENT
 function ThemeCompany({ form, fromLoading }: IThemePanlesContainerProps) {

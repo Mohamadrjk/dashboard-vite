@@ -6,7 +6,7 @@ import { Alert, Skeleton } from "antd";
 import { RedoOutlined } from "@ant-design/icons";
 import clsx from "clsx";
 import { IRakingPieReport } from "@/types/club-types/club-reports-type";
-import { getRankingPagePieReport } from "@/utils/club-api/club-report-service";
+import { getRankingPagePieReport } from "@/api/club-api/club-report-service";
 
 const LevelDataAbundance = () => {
   const [chartData, setChartData] = useState({

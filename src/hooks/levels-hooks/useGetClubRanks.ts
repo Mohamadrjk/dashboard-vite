@@ -1,6 +1,6 @@
 import { IClubRanks } from "@/types/club-types/club-levels-type";
-import { IClubHttpResult } from "@/utils/club-api/club-http-result";
-import { getCompanyRanksList } from "@/utils/club-api/club-ranking-service";
+import { IClubHttpResult } from "@/api/club-api/club-http-result";
+import { getCompanyRanksList } from "@/api/club-api/club-ranking-service";
 import { useQuery } from "@tanstack/react-query";
 import { MenuProps } from "antd";
 import { useMemo, useState } from "react";

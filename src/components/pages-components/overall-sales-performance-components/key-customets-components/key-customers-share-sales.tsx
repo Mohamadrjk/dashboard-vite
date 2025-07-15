@@ -1,5 +1,5 @@
 "use client";
-import { getKeyCustomerSalesShare } from "@/utils/report_sale-apis/report_saleService";
+import { getKeyCustomerSalesShare } from "@/api/report_sale-apis/report_saleService";
 import { RedoOutlined } from "@ant-design/icons";
 import { useQuery } from "@tanstack/react-query";
 import { Alert, Button, InputNumber, Skeleton, Tooltip } from "antd";

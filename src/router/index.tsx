@@ -9,6 +9,9 @@ import CustomersInteractionPAge from "@/pages/customer-Interactions/page";
 import StatisticalReportsPage from "@/pages/statistical-reports/page";
 import GeneralGoodsSalesTermsPage from "@/pages/goods-sales-terms/page";
 import MainLayout from "@/components/layouts-components/MainLayout";
+import OverallSalesPerformancePage from "@/pages/overall-sales-performance/page";
+import SellingProductsAndServicesPage from "@/pages/Selling-products-and-services/page";
+import KeyAccounts from "@/pages/key-accounts/page";
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +57,15 @@ export const router = createBrowserRouter([
         path: "goods-sales-terms",
         element: <GeneralGoodsSalesTermsPage />,
       },
+      {
+        path: "overall-sales-performance",
+        element: <OverallSalesPerformancePage />,
+      },
+      {
+        path: "Selling-products-and-services",
+        element: <SellingProductsAndServicesPage />,
+      },
+      { path: "key-accounts", element: <KeyAccounts /> },
     ],
   },
 ]);

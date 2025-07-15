@@ -1,13 +1,14 @@
 "use client";
-import { getTopCustomers } from "@/utils/report_sale-apis/report_saleService";
+import { getTopCustomers } from "@/api/report_sale-apis/report_saleService";
 import { Alert, InputNumber, Button, Skeleton } from "antd";
 import { useQuery } from "@tanstack/react-query";
 import { RedoOutlined } from "@ant-design/icons";
-import CartCardContainer from "@/components/shared/chart-card/chart-card-containetr";
-import GenerateCustomChartTooltip from "@/components/shared/chart-card/custom-chart-tooltip";
+
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
 import { useMemo, useState } from "react";
 import { ApexOptions } from "apexcharts";
+import GenerateCustomChartTooltip from "@/components/shared-components/chart-card/custom-chart-tooltip";
+import CartCardContainer from "@/components/shared-components/chart-card/chart-card-containetr";
 
 const TopCustomersByers = () => {
   const [config, setConfig] = useState({ limit: 10 });
@@ -88,7 +89,7 @@ const TopCustomersByers = () => {
       },
       xaxis: {
         categories: chartData.map((item) => item.customer_name),
-        formatter: (value) =>
+        formatter: (value: any) =>
           value.length > 10 ? value.substring(0, 10) + "..." : value,
       },
       legend: {
@@ -120,7 +121,7 @@ const TopCustomersByers = () => {
         theme: "light",
         cssClass: "!bg-transparent",
         followCursor: true,
-        custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+        custom: function ({ dataPointIndex }) {
           return GenerateCustomChartTooltip({
             title: {
               title: "مشتری",
@@ -184,9 +185,9 @@ const TopCustomersByers = () => {
               min={1}
               max={100}
               value={config.limit}
-              onChange={(value) =>
-                setTempConfig({ ...tempConfig, limit: value })
-              }
+              onChange={(value) => {
+                if (value) setTempConfig({ ...tempConfig, limit: value });
+              }}
               className="!w-12"
             />
           </span>

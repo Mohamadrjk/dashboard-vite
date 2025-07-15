@@ -1,6 +1,6 @@
 import { useNotify } from "@/components/shared-components/notife/notife";
 import { ICategoryItem } from "@/types/ditgitalmenu-types/category";
-import { deleteCategoryItem } from "@/utils/digitalmenu-api/categoryService";
+import { deleteCategoryItem } from "@/api/digitalmenu-api/categoryService";
 import { useState } from "react";
 
 function useDeleteMenuItem() {

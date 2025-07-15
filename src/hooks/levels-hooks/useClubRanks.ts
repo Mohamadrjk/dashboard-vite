@@ -1,5 +1,5 @@
 import { IClubRanks } from "@/types/club-types/club-levels-type";
-import { getCompanyRanksList } from "@/utils/club-api/club-ranking-service";
+import { getCompanyRanksList } from "@/api/club-api/club-ranking-service";
 import { useCallback, useEffect, useState } from "react";
 
 const useClubRanks = () => {

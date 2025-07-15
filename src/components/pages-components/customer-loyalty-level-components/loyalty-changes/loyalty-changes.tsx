@@ -1,6 +1,6 @@
 "use client";
 import { ILoyaltyChanges } from "@/types/customers-model";
-import { getAnalysisLoyaltyChanges } from "@/utils/customerService";
+import { getAnalysisLoyaltyChanges } from "@/api/customerService";
 import { RedoOutlined } from "@ant-design/icons";
 import { Alert, Skeleton } from "antd";
 import { useCallback, useEffect, useState } from "react";

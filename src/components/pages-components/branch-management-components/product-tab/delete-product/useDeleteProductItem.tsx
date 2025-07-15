@@ -1,6 +1,6 @@
 import { useNotify } from "@/components/shared-components/notife/notife";
 import { IProductItem } from "@/types/ditgitalmenu-types/product";
-import { deleteProductItem } from "@/utils/digitalmenu-api/productService";
+import { deleteProductItem } from "@/api/digitalmenu-api/productService";
 import { useState } from "react";
 
 function useDeleteProductItem() {

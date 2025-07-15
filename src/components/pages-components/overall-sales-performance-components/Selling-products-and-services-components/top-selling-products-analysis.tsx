@@ -1,13 +1,14 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import { Alert, Button, InputNumber, Select } from "antd";
 import { LoadingOutlined, RedoOutlined } from "@ant-design/icons";
 import { ApexOptions } from "apexcharts";
 
-import { getProductSalesAnalysis } from "@/utils/report_sale-apis/report_saleService";
-import CartCardContainer from "@/components/shared/chart-card/chart-card-containetr";
+import { getProductSalesAnalysis } from "@/api/report_sale-apis/report_saleService";
+
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
+import CartCardContainer from "@/components/shared-components/chart-card/chart-card-containetr";
 
 const INTERVAL_OPTIONS = [
   { value: "1 MONTH", label: "1 ماه" },
@@ -132,7 +133,7 @@ const TopSellingProductsAnalysis = () => {
           },
         ],
         tooltip: {
-          custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+          custom: function ({ dataPointIndex }) {
             const productData = chartData[dataPointIndex];
 
             return `
@@ -188,7 +189,7 @@ const TopSellingProductsAnalysis = () => {
             <div className="flex items-center justify-center w-full h-full bg-gray-100">
               <LoadingOutlined className="text-[100px]" />
             </div>
-          ) : null
+          ) : undefined
         }
         headerElement={
           <div className="w-full flex items-center justify-end gap-4">
@@ -198,9 +199,9 @@ const TopSellingProductsAnalysis = () => {
                 min={1}
                 max={50}
                 value={tempConfig.limit}
-                onChange={(value) =>
-                  setTempConfig({ ...tempConfig, limit: value })
-                }
+                onChange={(value) => {
+                  if (value) setTempConfig({ ...tempConfig, limit: value });
+                }}
                 className="!w-12"
                 onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
               />

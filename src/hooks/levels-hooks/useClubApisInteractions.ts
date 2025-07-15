@@ -7,9 +7,9 @@ import {
   getCompanyLevelsListByRankId,
   onDeleteLevelWithId,
   onUpdateLevel,
-} from "@/utils/club-api/club-ranking-service";
+} from "@/api/club-api/club-ranking-service";
 
-import { getCompanyDefaultLevelList } from "@/utils/club-api/club-ranking-service";
+import { getCompanyDefaultLevelList } from "@/api/club-api/club-ranking-service";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 const useGetDefaultLevels = (levels: IClubStatusNew[]) => {

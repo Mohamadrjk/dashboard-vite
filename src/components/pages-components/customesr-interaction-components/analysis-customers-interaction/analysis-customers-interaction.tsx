@@ -6,7 +6,7 @@ import { Skeleton, Alert } from "antd";
 import { useEffect, useState } from "react";
 import { ApexOptions } from "apexcharts";
 import Chart from "react-apexcharts";
-import { getInteractionsStates } from "@/utils/customerService";
+import { getInteractionsStates } from "@/api/customerService";
 import { IInteractionsStates } from "@/types/customers-model";
 import moment from "jalali-moment";
 

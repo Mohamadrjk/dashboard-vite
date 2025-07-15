@@ -1,4 +1,4 @@
-import { getSalesTrendAnalysis } from "@/utils/product-analysis-apis/salesTrendAnalysisServise";
+import { getSalesTrendAnalysis } from "@/api/product-analysis-apis/salesTrendAnalysisServise";
 import { useQuery } from "@tanstack/react-query";
 import { MenuProps } from "antd";
 import { useMemo, useState } from "react";

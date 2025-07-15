@@ -1,5 +1,5 @@
 import { IBranchItem } from "@/types/ditgitalmenu-types/branch";
-import { deleteBranchItem } from "@/utils/digitalmenu-api/branchesService";
+import { deleteBranchItem } from "@/api/digitalmenu-api/branchesService";
 import { useState } from "react";
 
 function useDeleteBranchItem() {

@@ -1,7 +1,7 @@
 import { IBannerList } from "@/components/club-managment-components/club-settings-components/settins-modals/program-settings-modal-content/program-banner-selecting/banner-selecting-container";
 import { IBannerResultList } from "@/types/club-types/club-setting-type";
-import { IClubHttpResult } from "@/utils/club-api/club-http-result";
-import { GetCompanyClubBanners } from "@/utils/club-api/club-setting-service";
+import { IClubHttpResult } from "@/api/club-api/club-http-result";
+import { GetCompanyClubBanners } from "@/api/club-api/club-setting-service";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useMemo, useState } from "react";
 

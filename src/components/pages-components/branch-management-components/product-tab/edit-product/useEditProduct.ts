@@ -1,7 +1,7 @@
 import { useNotify } from "@/components/shared-components/notife/notife";
 import { ICategoryItem } from "@/types/ditgitalmenu-types/category";
 import { IProductItem } from "@/types/ditgitalmenu-types/product";
-import { editProductItem } from "@/utils/digitalmenu-api/productService";
+import { editProductItem } from "@/api/digitalmenu-api/productService";
 import { useState } from "react";
 import useAddNewProduct from "../add-product/useAddProduct";
 import { useForm } from "react-hook-form";

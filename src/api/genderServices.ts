@@ -6,7 +6,7 @@ import {
   IGenderStaticsWithPurchases,
   ISalesByGenderAndCityReport,
 } from "@/types/genderTypes";
-import { createUrlSearchParams } from "./common-methods/create-url-param";
+import { createUrlSearchParams } from "../utils/common-methods/create-url-param";
 
 const getGenderStatistics = async () => {
   return await axiosInstance.get<

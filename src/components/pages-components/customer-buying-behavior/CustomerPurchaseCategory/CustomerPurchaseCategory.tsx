@@ -2,7 +2,7 @@
 
 import { ICustomerPurchaseCategory } from "@/types/customers-model";
 import { numberToPersianPrice } from "@/utils/common-methods/number-to-price";
-import { getCustomerPurchaseCategory } from "@/utils/customerService";
+import { getCustomerPurchaseCategory } from "@/api/customerService";
 import { RedoOutlined } from "@ant-design/icons";
 import { Alert, Button, Dropdown, Skeleton } from "antd";
 import type { MenuProps } from "antd";

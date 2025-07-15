@@ -1,7 +1,7 @@
 import { useNotify } from "@/components/shared-components/notife/notife";
 import { IBranchItem } from "@/types/ditgitalmenu-types/branch";
 import { ICategoryItem } from "@/types/ditgitalmenu-types/category";
-import { editCategoryItem } from "@/utils/digitalmenu-api/categoryService";
+import { editCategoryItem } from "@/api/digitalmenu-api/categoryService";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";

@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import axiosInstance, { controlers } from "./apiConfig";
-import { createUrlSearchParams } from "./common-methods/create-url-param";
+import { createUrlSearchParams } from "../utils/common-methods/create-url-param";
 import { IHttpResult } from "@/types/httpResult";
 import {
   IAnalysisLoyaltyMonthly,

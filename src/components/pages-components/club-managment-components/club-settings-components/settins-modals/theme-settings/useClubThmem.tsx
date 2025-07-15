@@ -5,8 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useNotify } from "@/components/shared-components/notife/notife";
 import { IClubCompanyInfo, IClubCompanyTheme } from "../../../../../types/club-types/club_theme_types";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { GetClubCompanyInfo, updateClubCompanyInfo } from "@/utils/club-api/club-setting-service";
-import { IClubHttpResult } from "@/utils/club-api/club-http-result";
+import { GetClubCompanyInfo, updateClubCompanyInfo } from "@/api/club-api/club-setting-service";
+import { IClubHttpResult } from "@/api/club-api/club-http-result";
 
 
 const validationSchema = Yup.object().shape({

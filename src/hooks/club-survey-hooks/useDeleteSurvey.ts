@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { onDeleteSurveyWithId } from "@/utils/club-api/club-survey-service";
+import { onDeleteSurveyWithId } from "@/api/club-api/club-survey-service";
 import { useNotify } from "@/components/shared-components/notife/notife";
 
 export const useDeleteSurvey = () => {

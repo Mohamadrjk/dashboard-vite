@@ -1,6 +1,6 @@
 import { useNotify } from "@/components/shared-components/notife/notife";
 import { IBranchItem } from "@/types/ditgitalmenu-types/branch";
-import { editBranchItem } from "@/utils/digitalmenu-api/branchesService";
+import { editBranchItem } from "@/api/digitalmenu-api/branchesService";
 import { useState } from "react";
 import useAddNewBranch from "../add-branch-form/useAddNewBranch";
 import { useForm } from "react-hook-form";

@@ -3,7 +3,7 @@
 import { useNotification } from "@/components/shared-components/message-provider/messageProvider";
 import { triggerVisibility } from "@/redux/commonSlice/commonSlice";
 import { onInitProfile } from "@/redux/profile/profileSlice";
-import { login, LoginResponse } from "@/utils/authinticationService";
+import { login, LoginResponse } from "@/api/authinticationService";
 import { setCookie } from "@/utils/common-methods/coockieMethods";
 import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
