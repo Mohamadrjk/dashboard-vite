@@ -1,4 +1,4 @@
-import AppLoading from "@/components/Loadings/AppLoading/loading";
+import AppLoading from "@/components/shared-components/loadings-components/app-loading/loading";
 import NumberOfCustomerPurchases from "@/components/pages-components/statistical-reports-of-customers/Number-of-customer-purchases/Number-of-customer-purchases";
 import PurchaseDistribution from "@/components/pages-components/statistical-reports-of-customers/purchase-distribution/purchase-distribution";
 import { TopCustomers, TopProductsByGenderContainer } from "@/components/pages-components/statistical-reports-of-customers/statical-report-lazy/statical-report-lazy";

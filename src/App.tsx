@@ -3,7 +3,8 @@ import { RouterProvider } from 'react-router'
 import { router } from './router'
 import AppProvider from './redux/provider/app-provider'
 import { Suspense } from 'react'
-import AppLoading from './components/Loadings/AppLoading/loading'
+import AppLoading from './components/shared-components/loadings-components/app-loading/loading'
+
 
 function App() {
   return (

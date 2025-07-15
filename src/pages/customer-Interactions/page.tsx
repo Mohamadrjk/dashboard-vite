@@ -1,4 +1,4 @@
-import AppLoading from "@/components/Loadings/AppLoading/loading";
+import AppLoading from "@/components/shared-components/loadings-components/app-loading/loading";
 import AnalysisCustomersInteractionChart from "@/components/pages-components/customesr-interaction-components/analysis-customers-interaction/analysis-customers-interaction";
 import InteractionsChart from "@/components/pages-components/customesr-interaction-components/customer-interaction/customer-interactions";
 import { Suspense } from "react";

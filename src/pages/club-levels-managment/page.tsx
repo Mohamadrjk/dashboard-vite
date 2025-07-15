@@ -1,4 +1,4 @@
-import AppLoading from "@/components/Loadings/AppLoading/loading";
+import AppLoading from "@/components/shared-components/loadings-components/app-loading/loading";
 import { ClmTopbarCardComponentLazy, ClubManagementTableComponentLazy, LevelDataAbundanceLazy, UsersLevelsDataLazy } from "@/components/pages-components/club-managment-components/club-levels-components/club-levels-managment-componets/club-levels-lazy";
 import { Suspense } from "react";
 
