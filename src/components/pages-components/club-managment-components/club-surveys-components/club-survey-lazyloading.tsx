@@ -1,11 +1,9 @@
-"use client";
+import { dynamic } from "@/components/shared-components/dynamicImport/dynamicImport";
 import { Skeleton } from "antd";
-import { lazy } from "react";
 
 export const ClubSurveyTableContainerLazy = dynamic(
   () => import("./club-survey-table/club-survey-table"),
   {
-    ssr: false,
     loading: () => (
       <div className="w-full aspect-[16/6]">
         <Skeleton.Node active className="!w-full !h-full" />
@@ -17,7 +15,6 @@ export const ClubSurveyTableContainerLazy = dynamic(
 export const ClubSurveyTopCartsContainerLazy = dynamic(
   () => import("./club-survey-top-carts/club-survey-top-carts"),
   {
-    ssr: false,
     loading: () => (
       <>
         {Array.from({ length: 4 }).map((_, index) => {

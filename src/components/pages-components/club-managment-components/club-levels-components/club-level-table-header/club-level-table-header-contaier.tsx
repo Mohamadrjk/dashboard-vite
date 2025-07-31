@@ -5,12 +5,11 @@ import { Dispatch, SetStateAction, useState } from "react";
 import ClubCreateRankModalContainer from "../../club-create-modals/club-create-rank-modal-container";
 import ClubCreateLevelModalContainer from "../../club-create-modals/club-crete-level/club-crete-level-modal-container";
 import { DefaultOptionType } from "antd/es/select";
-import { ItemType } from "antd/es/menu/interface";
 
 interface ClubLevelsTableHeaderProps {
   ranks: IClubRanks[];
-  currentRankId: number;
-  setCurrentRankId: Dispatch<SetStateAction<number>>;
+  currentRankId: number | undefined;
+  setCurrentRankId: Dispatch<SetStateAction<number | undefined>>;
   handleGetClubRanks: () => Promise<void>;
   handleGetClubLevelsByRankId: () => Promise<void>;
 }

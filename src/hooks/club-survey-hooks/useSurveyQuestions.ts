@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Questions } from "@/components/club-managment-components/club-surveys-components/survey-modals/create-survey-modal/create-survey-questions-components/survey-questions-list";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -18,8 +19,7 @@ const useSurveyQuestions = () => {
     imageUrl,
   }: {
     title: string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    imageUrl: any;
+    imageUrl?: any;
   }) => {
     setQuestions((prev) => {
       const nextId = String(prev.length + 1);

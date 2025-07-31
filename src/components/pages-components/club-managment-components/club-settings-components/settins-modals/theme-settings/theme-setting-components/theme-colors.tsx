@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import { IThemePanlesContainerProps } from './theme-panels'
-import CustomThemeColorPicker from '@/components/theme-setting-components/theme-contents/customThemeColorPicker'
 import { Collapse } from 'antd';
 import { renderPlusMinusForCollapse } from './theme-expand';
-import { IClubCompanyTheme } from '../../../../../../types/club-types/club_theme_types';
+import { IClubCompanyTheme } from '@/types/club-types/club_theme_types';
+import CustomThemeColorPicker from '@/components/pages-components/theme-setting-components/theme-contents/customThemeColorPicker';
 
 
 function ThemeColors({ form, fromLoading }: IThemePanlesContainerProps) {
@@ -57,7 +58,7 @@ function ThemeColors({ form, fromLoading }: IThemePanlesContainerProps) {
     )
 }
 
-const ButtonsColorSection = (props) => {
+const ButtonsColorSection = (props: any) => {
     const ButtonsColorFileds: IClubCompanyTheme = {
         cta: "رنگ دکمه اصلی",
         "ctaDisabled": " رنگ دکمه اصلی (غیرفعال)",
@@ -72,14 +73,14 @@ const ButtonsColorSection = (props) => {
     return (<div className=' grid grid-cols-2  max-md:grid-cols-1  gap-5 w-full h-full'>
         {Object.keys(ButtonsColorFileds).map((i, index) => <CustomThemeColorPicker
             key={index}
-            title={ButtonsColorFileds[i]}
+            title={ButtonsColorFileds[i as keyof typeof ButtonsColorFileds] ?? ''}
             control={props.control}
             lable={`colors.${i}`}
             disabled={props.fromLoading}
         />)}
     </div>)
 }
-const BGColorsSection = (props) => {
+const BGColorsSection = (props: any) => {
     const BGColorsSectionFileds: IClubCompanyTheme = {
         "cta30": " رنگ باکس متنی اصلی",
         highlighter: " رنگ  پس زمینه سفید ",
@@ -92,7 +93,7 @@ const BGColorsSection = (props) => {
     return (<div className=' grid grid-cols-2   max-md:grid-cols-1 gap-5 w-full h-full'>
         {Object.keys(BGColorsSectionFileds).map((i, index) => <CustomThemeColorPicker
             key={index}
-            title={BGColorsSectionFileds[i]}
+            title={BGColorsSectionFileds[i as keyof typeof BGColorsSectionFileds] ?? ''}
             control={props.control}
             lable={`colors.${i}`}
             disabled={props.fromLoading}

@@ -12,6 +12,9 @@ import MainLayout from "@/components/layouts-components/MainLayout";
 import OverallSalesPerformancePage from "@/pages/overall-sales-performance/page";
 import SellingProductsAndServicesPage from "@/pages/Selling-products-and-services/page";
 import KeyAccounts from "@/pages/key-accounts/page";
+import ClubSettingsPage from "@/pages/club-settings/page";
+import ClubLevelsManagementPage from "@/pages/club-levels-managment/page";
+import ClubSurveysManagementPage from "@/pages/club-surveys-managment/page";
 
 export const router = createBrowserRouter([
   {
@@ -66,6 +69,9 @@ export const router = createBrowserRouter([
         element: <SellingProductsAndServicesPage />,
       },
       { path: "key-accounts", element: <KeyAccounts /> },
+      { path: "club-settings", element: <ClubSettingsPage /> },
+      { path: "club-levels-managment", element: <ClubLevelsManagementPage /> },
+      { path: "club-surveys-managment", element: <ClubSurveysManagementPage /> },
     ],
   },
 ]);

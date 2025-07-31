@@ -1,11 +1,9 @@
-import DraggableIcon from "@/components/shared-components/custom-icons/drag-icon";
 import { useSortableList } from "@/hooks/club-survey-hooks/useSortableList";
 import { closestCenter, DndContext } from "@dnd-kit/core";
 import {
   SortableContext,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import SortableItem from "./levels-benefit-item";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers"; // ✅ Import modifier
 import { Dispatch, SetStateAction, useEffect } from "react";

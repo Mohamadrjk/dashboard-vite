@@ -21,6 +21,9 @@ function SideBar({ getOpenKey, items, pathName, isMobile, open, setOpen }: SideB
                 className='*:!p-0'
                 onClose={() => setOpen(false)}
                 open={open}
+                style={{
+                    direction: 'rtl'
+                }}
                 width={240}
             >
                 <Menu

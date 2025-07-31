@@ -49,14 +49,14 @@ const ThemeRowImageUploader: React.FC<ClubUploaderPropsProps> = ({
                         multiple={false}
                         accept=".webp"
                         customRequest={handleFileUpload}
-                        itemRender={(o) => <div className=" w-full ">
-                            {React.cloneElement(o, {
-                                style: {
-                                    "flexGrow": 1,
-                                    width: "100%"
-                                }
-                            })}
-                        </div>}
+                        // itemRender={(o) => <div className=" w-full ">
+                        //     {React.cloneElement(o, {
+                        //         style: {
+                        //             "flexGrow": 1,
+                        //             width: "100%"
+                        //         }
+                        //     })}
+                        // </div>}
                         className=" !w-full flex  !justify-center !flex-col !items-center"
                         onPreview={handlePreview}
                         onChange={(info) => onUploaderChange(info, onChange)}

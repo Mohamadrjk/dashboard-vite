@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { UploadFile } from 'antd';
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Control } from 'react-hook-form';
 type FileType = NonNullable<UploadFile["originFileObj"]>;
 
@@ -9,11 +10,11 @@ export interface ClubUploaderPropsProps {
     control: Control<any, any>;
     name: string; // Field name for react-hook-form
     baseUploaderUrl?: string;
-    uploadHandler: (file: File) => Promise<string>;
+    uploadHandler: (file: File) => Promise<string | undefined>;
     disabled: boolean;
 }
 
-function useClubUploader(defaultValue: string, uploadHandler: (file) => void, baseUploaderUrl: string) {
+function useClubUploader(defaultValue: string, uploadHandler: (file: any) => void, baseUploaderUrl?: string) {
     const getBase64 = (file: FileType): Promise<string> =>
         new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -51,14 +52,14 @@ function useClubUploader(defaultValue: string, uploadHandler: (file) => void, ba
     useEffect(() => {
         initDefaultValue();
     }, [initDefaultValue]);
-    const onUploaderChange = ({ fileList: newFileList }, onChange: any) => {
+    const onUploaderChange = ({ fileList: newFileList }: { fileList: any }, onChange: any) => {
         setFileList(newFileList);
         const uploadedFile = newFileList?.[0];
         if (uploadedFile?.status === "done") {
             onChange(uploadedFile.url || ""); // fallback
         }
     }
-    const handleFileUpload = async (options) => {
+    const handleFileUpload = async (options: any) => {
         const { onProgress, onError, onSuccess, file } = options;
         try {
             // Simulate upload progress (you can report actual if possible)
@@ -72,7 +73,7 @@ function useClubUploader(defaultValue: string, uploadHandler: (file) => void, ba
                     uid: file.uid,
                     name: file.name,
                     status: "done",
-                    url: baseUploaderUrl + url,
+                    url: baseUploaderUrl ?? '' + url,
                 },
             ]);
         } catch (err) {

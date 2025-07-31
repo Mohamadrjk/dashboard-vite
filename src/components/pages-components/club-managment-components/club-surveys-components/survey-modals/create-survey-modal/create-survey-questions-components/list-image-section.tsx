@@ -1,6 +1,5 @@
-import DashboardImageUploader, {
-  getBase64,
-} from "@/components/shared/image-uploader";
+
+import DashboardImageUploader, { getBase64 } from "@/components/shared-components/uploader/image-uploader";
 import { DeleteOutlined } from "@ant-design/icons";
 import { Image } from "antd";
 import { useEffect, useState } from "react";
@@ -62,9 +61,7 @@ const ListItemImageSec: React.FC<ListItemImageSecProps> = ({
         </div>
       ) : (
         <DashboardImageUploader
-          onImageConvert={(base64, baseBlob, file) =>
-            handleImageChange(base64, baseBlob, file)
-          }
+          onImageConvert={handleImageChange}
           maxHeight={1024}
           maxWidth={1024}
           info={

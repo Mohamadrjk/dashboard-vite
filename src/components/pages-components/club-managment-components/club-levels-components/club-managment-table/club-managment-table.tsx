@@ -1,15 +1,12 @@
-"use client";
 import React, { useState } from "react";
-import { Alert, Button, Skeleton, Table, TableColumnsType } from "antd";
+import { Alert, Button, Skeleton } from "antd";
 import { RedoOutlined } from "@ant-design/icons";
-import clsx from "clsx";
-import { Icon } from "@iconify/react";
 import { IClubStatusNew } from "@/types/club-types/club-levels-type";
 import useClubLevels from "@/hooks/levels-hooks/useLevelsTable";
 import ClubEditLevelsContainer from "../club-edit-levels-components/club-edit-levels-container";
 import ClubLevelsTableHeader from "../club-level-table-header/club-level-table-header-contaier";
-import ConfirmModal from "@/components/shared/confirm-modal/confirm-modal";
 import ClubLevelsTable from "./club-levels-table";
+import ConfirmModal from "@/components/shared-components/confirm-modal/confirm-modal";
 
 const ClubManagementTableComponent: React.FC = () => {
   const {
@@ -110,7 +107,7 @@ const ClubManagementTableComponent: React.FC = () => {
         loading={removeLoading}
         open={openRemoveLevelModal}
         setOpen={setOpenRemoveModal}
-        removeMethod={() => onRemoveLevelById(selectedLevelToRemove.id)}
+        removeMethod={() => selectedLevelToRemove && onRemoveLevelById(selectedLevelToRemove?.id)}
         title={
           <span>
             آیا از حذف سطح {selectedLevelToRemove?.title} مطمئن هستید؟

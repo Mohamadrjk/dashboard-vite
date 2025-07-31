@@ -1,11 +1,9 @@
-import React from 'react'
 import ThemeColors from './theme-colors';
 import ThemeCompany from './theme-company';
-import { Form, TabsProps } from 'antd';
-import GeneralTabPanel from '@/components/branch-management-components/tabs-component/GeneraTabPanel';
-import useClubThemeSetting from '../useClubThmem';
+import { TabsProps } from 'antd';
 import { UseFormReturn } from 'react-hook-form';
-import { IClubCompanyInfo } from '../../../../../../types/club-types/club_theme_types';
+import { IClubCompanyInfo } from '@/types/club-types/club_theme_types';
+import GeneralTabPanel from '@/components/pages-components/branch-management-components/tabs-component/GeneraTabPanel';
 export interface IThemePanlesContainerProps {
     form: UseFormReturn<IClubCompanyInfo>
     fromLoading: boolean

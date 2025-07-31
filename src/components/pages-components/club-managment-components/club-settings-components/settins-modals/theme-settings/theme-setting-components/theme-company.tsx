@@ -1,13 +1,12 @@
-import React from 'react'
 import { IThemePanlesContainerProps } from './theme-panels'
-import ReusableFormField from '@/components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-input'
 import ThemeRowImageUploader from './uploaders/theme-setting-uploader';
-import ReusableFormFieldTextArea from '@/components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-textArea';
 import ThemeCompanyPhoneInput from './theme-company-phonenumber';
 import ClubUploaderProps from './uploaders/club-uploader';
 import { uploadToClubGalery } from '@/api/club-api/club-gallery-service';
 import ThemeCompanySocial from './socialMedias/theme-company-social';
-const baseUploaderUrl = process.env.NEXT_PUBLIC_CLUB_MANAGEMENT
+import ReusableFormField from '@/components/pages-components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-input';
+import ReusableFormFieldTextArea from '@/components/pages-components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-textArea';
+const baseUploaderUrl = import.meta.env.VITE_API_CLUB_MANAGEMENT
 function ThemeCompany({ form, fromLoading }: IThemePanlesContainerProps) {
     const { control, getValues, setValue } = form;
     const fieldsForCompany = {
@@ -44,7 +43,7 @@ function ThemeCompany({ form, fromLoading }: IThemePanlesContainerProps) {
             </div>
             {Object.keys(fieldsForCompany).map((i, index) => (
                 <div key={index}>
-                    <span>{fieldsForCompany[i]}</span>
+                    <span>{fieldsForCompany[i as keyof typeof fieldsForCompany]}</span>
                     <ReusableFormField
                         className="!m-0"
                         name={i}

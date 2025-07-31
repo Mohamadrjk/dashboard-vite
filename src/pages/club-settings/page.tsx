@@ -1,4 +1,4 @@
-import SettingTabsContainer from "@/components/club-managment-components/club-settings-components/setting-tabs-container/setting-tabs-container";
+import SettingTabsContainer from "@/components/pages-components/club-managment-components/club-settings-components/setting-tabs-container/setting-tabs-container";
 
 const ClubSettingsPage = () => {
   return (

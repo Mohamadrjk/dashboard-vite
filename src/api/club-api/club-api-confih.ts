@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import Cookies from "universal-cookie";
 
 export const clubApiInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_CLUB_MANAGEMENT, // Use environment variables for flexibility
+  baseURL: import.meta.env.VITE_API_CLUB_MANAGEMENT, // Use environment variables for flexibility
   timeout: 25000, // Set a timeout to handle long requests
   headers: {
     "Content-Type": "application/json",

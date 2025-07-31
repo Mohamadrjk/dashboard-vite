@@ -1,8 +1,6 @@
-import { ICreateLevelPayload } from "@/types/club-types/club-levels-type";
-import { Controller, useForm } from "react-hook-form";
+import { Controller } from "react-hook-form";
 import { Divider, Input, Button } from "antd";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-import { useState, useCallback } from "react";
 import SurveyQuestionsList from "./survey-questions-list";
 import useSurveyQuestions from "@/hooks/club-survey-hooks/useSurveyQuestions";
 
@@ -35,7 +33,7 @@ const NewSurveyQuestionsContainer: React.FC<
   } = useSurveyQuestions();
 
   // Render errors if any
-  const renderError = (message: string) => (
+  const renderError = (message?: string) => (
     <span className="text-red-500 text-xs font-Regular">{message}</span>
   );
 
@@ -60,7 +58,7 @@ const NewSurveyQuestionsContainer: React.FC<
                   disabled={loading}
                   dir="rtl"
                   placeholder="شرح پرسش را وارد کنید"
-                  className="!font-Medium placeholder:text-gray-300 placeholder:text-secondary !py-[10px] pr-[6px]"
+                  className="!font-Medium  placeholder:text-secondary !py-[10px] pr-[6px]"
                 />
               )}
             />

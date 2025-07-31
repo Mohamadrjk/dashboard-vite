@@ -1,15 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import ReusableFormField from "@/components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-input";
-import { Dispatch, SetStateAction, useState } from "react";
-import { surveyPointGroup, surveyUsersGroup } from "../../../survey-data";
+import { Dispatch, SetStateAction } from "react";
+import { surveyPointGroup } from "../../../survey-data";
 import DashboardImageUploader from "@/components/shared-components/uploader/image-uploader";
-import ReusableFormFieldTextArea from "@/components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-textArea";
 import {
   PointGroupsDropDown,
-  UsersGroupsDropDown,
 } from "./survey-form-dropdowns";
+import ReusableFormField from "@/components/pages-components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-input";
+import ReusableFormFieldTextArea from "@/components/pages-components/club-managment-components/club-create-modals/club-crete-level/create-level-form-components/reusable-form-textArea";
 
 export interface SurveyFormModel {
   Title?: string;
@@ -21,7 +21,7 @@ export interface SurveyFormModel {
   SurveyPointGroupId?: number;
 }
 
-export const validationSchema = yup.object().shape({
+const validationSchema = yup.object().shape({
   Title: yup.string().required("عنوان الزامی است"),
   Description: yup.string().required("توضیحات الزامی است"),
   Image: yup.mixed().required("تصویر الزامی است"),
@@ -43,13 +43,11 @@ const CreateSurveyFormContainer: React.FC<CreateSurveyFormContainerProps> = ({
   setTempFormData,
   tempFormData,
 }) => {
-  const [loading, setLoading] = useState<boolean>(false);
-
+  const loading = false;
   const {
     handleSubmit,
     control,
     setValue,
-    getValues,
     clearErrors,
     formState: { errors },
   } = useForm<SurveyFormModel>({
@@ -59,16 +57,15 @@ const CreateSurveyFormContainer: React.FC<CreateSurveyFormContainerProps> = ({
   });
 
   const onSubmitNewSurveyForm = (data: SurveyFormModel) => {
-    console.log(data);
     setTempFormData(() => data);
     setActiveIndex("2");
   };
 
   const handleImageChange = (
-    base64: string,
-    baseBlob: Blob,
-    file: File,
-    isUnachieved: boolean
+    { baseBlob, file }: {
+      baseBlob: Blob,
+      file: File,
+    }
   ) => {
     const formFile = new File([baseBlob], file.name, { type: file.type });
     setValue("Image", formFile);
@@ -136,8 +133,11 @@ const CreateSurveyFormContainer: React.FC<CreateSurveyFormContainerProps> = ({
           )}
         </label>
         <DashboardImageUploader
-          onImageConvert={(base64, baseBlob, file) =>
-            handleImageChange(base64, baseBlob, file, false)
+          onImageConvert={(_: any, baseBlob: Blob, file: File) =>
+            handleImageChange({
+              baseBlob: baseBlob,
+              file: file
+            })
           }
           showUploadedImage
           maxHeight={500}

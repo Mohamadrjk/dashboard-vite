@@ -18,11 +18,9 @@ import style from "../../club-levels-components/club-managment-table/club-managm
 import { ISurvey } from "@/types/club-types/club-surveys-type";
 import { useSurveyTable } from "@/hooks/club-survey-hooks/useSurveysTable";
 import { LoadingOutlined, RedoOutlined } from "@ant-design/icons";
-
 import { useDeleteSurvey } from "@/hooks/club-survey-hooks/useDeleteSurvey";
-
 const CustomPagination = lazy(
-  () => import("@/components/shared/custom-pagination/custom-pagination")
+  () => import("@/components/shared-components/custom-pagination/custom-pagination")
 );
 const ClubSurveyTAbleHeader = lazy(() => import("./club-survey-table-header"));
 
@@ -69,8 +67,8 @@ const ClubSurveyTableContainer = () => {
             order === "ascend"
               ? "cil:sort-ascending"
               : order === "descend"
-              ? "cil:sort-descending"
-              : "lets-icons:sort-list-light"
+                ? "cil:sort-descending"
+                : "lets-icons:sort-list-light"
           }
           width="28"
           height="28"
@@ -211,7 +209,7 @@ const ClubSurveyTableContainer = () => {
         pageSize={pageSize}
         setCurrentPage={setCurrentPage}
         setPageSize={setPageSize}
-        totalPage={totalPage}
+        totalPage={totalPage || 0}
       />
     </div>
   );

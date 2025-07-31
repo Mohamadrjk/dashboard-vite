@@ -1,13 +1,12 @@
-import Image from "next/image";
-import example1 from "@/publicimages/BronzeLevel.webp";
-import example2 from "@/publicimages/image 1372.png";
-import { Popover } from "antd";
+import example1 from "/public/images/BronzeLevel.webp";
+import example2 from "/public/images/image 1372.png";
+import { Image, Popover } from "antd";
 import { InfoCircleOutlined } from "@ant-design/icons";
 const MainImageExample = () => {
   const firstContent = (
     <div className="w-full flex justify-center">
       <Image
-        src={example1.src}
+        src={example1}
         width={80}
         height={60}
         className="!object-contain"
@@ -31,7 +30,7 @@ const UnAchievedImageExample = () => {
   const secondContent = (
     <div className="w-full flex justify-center">
       <Image
-        src={example2.src}
+        src={example2}
         width={80}
         height={60}
         className="!object-contain"

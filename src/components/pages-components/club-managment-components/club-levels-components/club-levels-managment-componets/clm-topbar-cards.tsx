@@ -1,11 +1,10 @@
-"use client";
-import TopBarCardItem from "@/components/dashboard-components/dashboars-topbar-carts/topBarCardItem";
 import { IRankingPageLabels } from "@/types/club-types/club-reports-type";
 import { getRankingPageLabels } from "@/api/club-api/club-report-service";
 import { RedoOutlined } from "@ant-design/icons";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Alert, Skeleton } from "antd";
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import TopBarCardItem from "@/components/pages-components/dashboard-components/dashboars-topbar-carts/topBarCardItem";
 
 const ClmTopbarCardComponent = () => {
   const [cartsData, setCartsData] = useState<IRankingPageLabels | undefined>(
@@ -22,7 +21,7 @@ const ClmTopbarCardComponent = () => {
       } else {
         setError(true);
       }
-    } catch (error) {
+    } catch {
       setError(true);
     } finally {
       setLoading(false);

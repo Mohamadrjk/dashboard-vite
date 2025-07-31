@@ -1,10 +1,7 @@
+import { ClubSurveyTableContainerLazy, ClubSurveyTopCartsContainerLazy } from "@/components/pages-components/club-managment-components/club-surveys-components/club-survey-lazyloading";
+import AppLoading from "@/components/shared-components/loadings-components/app-loading/loading";
 import { Suspense } from "react";
-import AppLoading from "../loading";
 
-import {
-  ClubSurveyTableContainerLazy,
-  ClubSurveyTopCartsContainerLazy,
-} from "@/components/club-managment-components/club-surveys-components/club-survey-lazyloading";
 
 const ClubSurveysManagementPage = () => {
   return (

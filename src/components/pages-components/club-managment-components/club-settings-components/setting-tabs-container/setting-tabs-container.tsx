@@ -1,29 +1,13 @@
-"use client";
 import SettingCartComponent from "../setting-tabs-cart/setting-cart-component";
 import style from "../club-settings-styles.module.css";
 import { tabsList } from "../club-tabs-data";
-import { Modal, Skeleton } from "antd";
+import { Alert, Button, Modal, Skeleton } from "antd";
 import { useState, useMemo } from "react";
-import { CloseCircleOutlined } from "@ant-design/icons";
-import SurveySettingContainer from "../settins-modals/survey-setting-modal-content/survey-setting-modal-content";
+import { CloseCircleOutlined, RedoOutlined } from "@ant-design/icons";
 import useManageClubSettings from "@/hooks/club-settings-hooks/useClubSetting";
-import RanksSettingContainer from "../settins-modals/rank-setting-modal-content/rank-setting-modal-content";
-import ProgramSettingsContainer from "../settins-modals/program-settings-modal-content/program-settings-container";
-import ExchangeRangePointsContainer from "../settins-modals/exchange-range-points/exchange-range-points-container";
 import clsx from "clsx";
-import RulesSetting from "../settins-modals/rules-setting/rules-setting";
-import { dynamic } from "@/components/shared-components/dynamicImport/dynamicImport";
-const ClubThemeSettings = dynamic(
-  () => import("../settins-modals/theme-settings/theme-settings"),
-  {
-    loading: () => (
-      <div className="w-full flex flex-col gap-1 aspect-[16/6]">
-        <Skeleton.Node active className="!w-full !h-[50px]" />
-        <Skeleton.Node active className="!w-full !h-[50vh]" />
-      </div>
-    ),
-  }
-);
+import { SettingTabComponents } from "./setting-tab-components-list";
+
 
 type ModalKeys =
   | "OpinionPoll"
@@ -54,7 +38,7 @@ const SettingTabsContainer = () => {
     setOpenModal({ key, show });
     if (!show && doRefetch) refetch();
   };
-
+  const Component = SettingTabComponents(toggleModal)
   // Skeleton Loading State
   if (isLoading || isRefetching)
     return (
@@ -70,31 +54,31 @@ const SettingTabsContainer = () => {
     );
 
   // Error State
-  // if (error)
-  //   return (
-  //     <div className="font-Regular relative w-full bg-Highlighter p-5 min-h-[400px] rounded-[12px]">
-  //       <Alert
-  //         message="خطا"
-  //         description="در دریافت اطلاعات تنظیمات کسب و کار خطایی رخ داده است"
-  //         type="error"
-  //         className="font-Medium !w-full !h-full"
-  //         showIcon
-  //       />
-  //       <Button
-  //         onClick={() => refetch}
-  //         className="!absolute left-2 top-2"
-  //         icon={<RedoOutlined />}
-  //       />
-  //     </div>
-  //   );
+  if (error)
+    return (
+      <div className="font-Regular relative w-full bg-Highlighter p-5 min-h-[400px] rounded-[12px]">
+        <Alert
+          message="خطا"
+          description="در دریافت اطلاعات تنظیمات کسب و کار خطایی رخ داده است"
+          type="error"
+          className="font-Medium !w-full !h-full"
+          showIcon
+        />
+        <Button
+          onClick={() => refetch}
+          className="!absolute left-2 top-2"
+          icon={<RedoOutlined />}
+        />
+      </div>
+    );
 
   return (
     <div className="w-full grid grid-cols-3   max-lg:grid-cols-1 gap-4 vdxl:gap-5 py-5 dxl:py-6 ldxl:py-8 vdxl:py-10">
       {tabsList.map((item, index) => (
         <SettingCartComponent
           cartKey={item.key}
-          key={index}
           {...item}
+          key={index}
           className={style["Cart_container"]}
           cartAction={() => toggleModal(false, item.key as ModalKeys, true)}
         />
@@ -128,7 +112,7 @@ const SettingTabsContainer = () => {
           content: clsx(
             "xl:!w-[55%] ldxl:!w-1/2 !w-full max-w-full !p-6 !bg-BG !h-full !mx-auto",
             openModal.key == "ExchangeRangePoints" &&
-              "lg:!w-[50%] dxl:!w-[40%]",
+            "lg:!w-[50%] dxl:!w-[40%]",
             openModal.key == "RulesSetting" && "lg:!w-[50%] dxl:!w-[40%]"
           ),
           footer: "!hidden",
@@ -136,41 +120,7 @@ const SettingTabsContainer = () => {
         closeIcon={false}
         footer={false}
       >
-        {{
-          OpinionPoll: (
-            <SurveySettingContainer
-              handleCancel={() => toggleModal(false)}
-              handleOk={() => toggleModal(true)}
-            />
-          ),
-          RankingSettings: (
-            <RanksSettingContainer
-              handleCancel={() => toggleModal(false)}
-              handleOk={() => toggleModal(true)}
-            />
-          ),
-          ProgramSettings: (
-            <ProgramSettingsContainer handleOk={() => toggleModal(true)} />
-          ),
-          ExchangeRangePoints: (
-            <ExchangeRangePointsContainer
-              handleCancel={() => toggleModal(false)}
-              handleOk={() => toggleModal(true)}
-            />
-          ),
-          RulesSetting: (
-            <RulesSetting
-              handleCancel={() => toggleModal(false)}
-              handleOk={() => toggleModal(true)}
-            />
-          ),
-          ThemeSetting: (
-            <ClubThemeSettings
-              handleCancel={() => toggleModal(false)}
-              handleOk={() => toggleModal(true)}
-            />
-          ),
-        }[openModal.key as keyof typeof tabsList] || null}
+        {Component[openModal.key as keyof typeof Component] || null}
       </Modal>
     </div>
   );

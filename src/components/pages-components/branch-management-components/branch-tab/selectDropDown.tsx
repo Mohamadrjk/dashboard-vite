@@ -11,7 +11,7 @@ interface SelectBranchProps {
   disabled?: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   options: optionType[];
-  selectedItem: optionType;
+  selectedItem?: optionType;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onMenuClick: (e: any, options: optionType[]) => void;
   isLoading?: boolean;
